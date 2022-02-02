@@ -14,11 +14,20 @@ int main( void ) {
 	DDRD = 0b11111111; // Alle pins van DDRD worden als output gezet.
 	
 	while (1) {
-		PORTD = 0b10000000; //het eerste ledje van port-D wordt aangeroepen.
-		wait(500);
-		PORTD = 0b01000000; //het tweede ledje van port-D wordt aangeroepen.
-		wait(500);
+		//If-statement checkt of drukknop op PINC-1 is ingedrukt
+		//zoja, dan gaat het ledje knipperen
+		//zoniet, dan blijft het ledje aan zonder enige instructie.
+		if(PINC == 0b00000001){ 
+			PORTD = 0b10000000;
+			wait(500);
+			PORTD = 0b00000000;
+			wait(500);
+		}else{
+			PORTD = 0b10000000;
+		}
 	}
+	
+	
 	return 1;
 }
 
