@@ -10,25 +10,59 @@ void wait( int ms ){
 	}	
 }
 
+int ledIds[3] = {0b00000001, 0b00000010, 0b00000100};
+	
+
+void setCharliePlexingLed(int led){
+	switch(led){
+		case 1:
+		DDRD = 0b11111011;
+		PORTD = ledIds[0];
+		
+		break;
+		case 2:
+		DDRD = 0b11111011;
+		PORTD = ledIds[1];
+		break;
+		
+		case 3:
+		DDRD = 0b11111110;
+		PORTD = ledIds[1];
+		break;
+		
+		case 4:
+		DDRD = 0b11111110;
+		PORTD = ledIds[2];
+		break;
+		case 5:
+		DDRD = 0b11111101;
+		PORTD = ledIds[0];
+		break;
+		case 6:
+		DDRD = 0b11111101;
+		PORTD = ledIds[2];
+		break;
+	}
+	
+}	
+	
 int main( void ) {
 	DDRD = 0b11111111; // Alle pins van DDRD worden als output gezet.
-	int speed = 500; //knipper snelheid als variable opgeslagen.
 	
-	while (1) {
-		PORTD = 0b10000000; //Led gaat aan voor een half seconde.
-		wait(speed);  
-		PORTD = 0b00000000; // led gaat uit voor een half seconde.
-		wait(speed);
-	
-		// check of de juiste knop wordt ingedrukt om te bepalen wat de snelheid is.
-		if (PINC == 0b00000001) {
-			//Deze if-statement checkt op welke snelheid het lampje knippert en pas het zodanig aan.
-			if(speed == 500) {
-				speed = 125;
-			} else {
-				speed = 500;
+		int i = 1;
+		
+		while(1){
+			
+			setCharliePlexingLed(i);
+			i++;
+			
+			if (i > 6)
+			{
+				i= 1;
 			}
-		}
+			
+			wait(500);				
+		
 	}
 	
 	return 1;
