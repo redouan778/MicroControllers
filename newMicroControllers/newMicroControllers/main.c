@@ -9,37 +9,44 @@ void wait( int ms ) {
 	}
 }
 
+int ledIndex = 0; //Current selected led
 
-ISR( INT0_vect ) {
-    PORTD |= (1<<5);		
+ISR( INT1_vect ) {	
+	//next led with a check
+	ledIndex++; 		
+	if (ledIndex > 7){
+		ledIndex = 0;
+	}
+	
+    PORTB = (1<<ledIndex);	
 }
 
 
-ISR( INT1_vect ) {
-    PORTD &= ~(1<<5);		
+ISR( INT2_vect ) {
+	//Previous led with a check
+	ledIndex--;	
+	if (ledIndex < 0) {
+		ledIndex = 7;
+	}
+
+    PORTB = (1<<ledIndex);		
 }
 
-/******************************************************************
-short:			main() loop, entry point of executable
-inputs:
-outputs:
-notes:			Slow background task after init ISR
-Version :    	DMK, Initial code
-*******************************************************************/
+
+
 int main( void ) {
 	// Init I/O
-	DDRD = 0xF0;			// PORTD(7:4) output, PORTD(3:0) input	
+	DDRD = 0x00;			//These are for the input buttons
+	DDRB = 0xFF;			//These are the output leds
+	PORTB = 0x01;			//Start led
 
 	// Init Interrupt hardware
-	EICRA |= 0x0B;			// INT1 falling edge, INT0 rising edge
-	EIMSK |= 0x03;			// Enable INT1 & INT0
+	EICRA |= 0b00111100;			
+	EIMSK |= 0b00000110;			
 	
-	// Enable global interrupt system
-	//SREG = 0x80;			// Of direct via SREG of via wrapper
 	sei();				
 
-	while (1) {
-		PORTD ^= (1<<7);	// Toggle PORTD.7
+	while (1) {		
 		wait( 500 );								
 	}
 
