@@ -1,79 +1,53 @@
+
 #define F_CPU 8e6
+
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/interrupt.h>
 
-void wait( int ms ) {
-	for (int i=0; i<ms; i++) {
-		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
-	}
-}
+typedef struct {
+unsigned char data;
+unsigned int delay ;
+} PATTERN_STRUCT;
 
-const char Numbers [15] = {
-	0b00111111,		// 0
-	0b00000110,		// 1
-	0b01011011,		// 2
-	0b01001111,		// 3
-	0b01100110,		// 4
-	0b01101101,		// 5
-	0b01111101,		// 6
-	0b00000111,		// 7
-	0b01111111,		// 8
-	0b01101111,		// 9
-	0b01110111,     //A
-	0b01111100,		//B
-	0b00111001,		//C
-	0b01011110,		//D
-	0b01111001,		//E
-	0b01110001		//F
+PATTERN_STRUCT pattern[] = {
+{0x00, 100}, {0x01, 100}, {0x02, 100}, {0x04, 100}, {0x10, 100}, {0x20, 100}, {0x40, 100}, {0x80, 100},
+{0x00, 100},
+{0xAA,  50}, {0x55,  50},
+{0xAA,  50}, {0x55,  50},
+{0xAA,  50}, {0x55,  50},
+{0x00, 100},
+{0x81, 100}, {0x42, 100}, {0x24, 100}, {0x18, 100}, {0x0F, 200}, {0xF0, 200}, {0x0F, 200}, {0xF0, 200},
+{0x00, 0x00}
 };
 
-int chosenNumber;
-
-//Checks the number and dispalys it to the 7-segment display
-void display(int digit){
-	if(digit >= 0 && digit <= 15){						
-		PORTD = Numbers[digit];							
-	} else{
-		PORTD = Numbers[14];
-	}	
+/*Busy wait number of millisecs*/
+void wait( int ms ) {
+for (int i=0; i<ms; i++) {
+_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
+}
 }
 
-//Substracts the number with one down
-void digitDOWN(){		
-	display(chosenNumber--);
+
+/*
+main() loop, entry point of executable
+*/
+int main( void )
+{
+DDRD = 0b11111111;					// PORTD all output
+
+while (1==1) {
+// Set index to begin of pattern array
+int index = 0;
+// as long as delay has meaningful content
+while( pattern[index].delay != 0 ) {
+// Write data to PORTD
+PORTD = pattern[index].data;
+// wait
+wait(pattern[index].delay);
+// increment for next round
+index++;
+}
 }
 
-//Adds one digit to the number
-void digitUP(){	
-	display(chosenNumber++);
-} 
-
-
-int main( void ) {
-	// Init I/O
-	DDRD = 0xFF;			//These are for the input buttons
-	PORTD = 0x00;		
-	PORTB = 0x01;
-
-	sei();				
-
-	chosenNumber = 4;
-	
-	while (1) {		
-		wait( 200 );	
-		display(chosenNumber);	
-		
-		//checks if the first button is pressed
-		if (PINB == 0b00000001) {
-			digitUP();
-		}
-		
-		//checks if the second button is pressed
-		if (PINB == 0b00000010) {
-			digitDOWN();
-		}								
-	}
-
-	return 1;
+return 1;
 }
