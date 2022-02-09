@@ -3,298 +3,219 @@ newMicroControllers.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  000001a2  00000216  2**0
+  0 .data         00000000  00800100  00800100  0000017c  2**0
                   ALLOC, LOAD, DATA
-  1 .text         000000ec  00000000  00000000  00000074  2**1
+  1 .text         000000a4  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      0000002f  00000000  00000000  00000216  2**0
+  2 .comment      0000002f  00000000  00000000  0000017c  2**0
                   CONTENTS, READONLY
-  3 .debug_aranges 00000030  00000000  00000000  00000245  2**0
+  3 .debug_aranges 00000038  00000000  00000000  000001ab  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_info   00000ba9  00000000  00000000  00000275  2**0
+  4 .debug_info   00000b4d  00000000  00000000  000001e3  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_abbrev 00000859  00000000  00000000  00000e1e  2**0
+  5 .debug_abbrev 00000830  00000000  00000000  00000d30  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_line   00000310  00000000  00000000  00001677  2**0
+  6 .debug_line   000002c8  00000000  00000000  00001560  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_frame  00000044  00000000  00000000  00001988  2**2
+  7 .debug_frame  00000074  00000000  00000000  00001828  2**2
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_str    0000027d  00000000  00000000  000019cc  2**0
+  8 .debug_str    0000027d  00000000  00000000  0000189c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    0000014a  00000000  00000000  00001c49  2**0
+  9 .debug_loc    000000e2  00000000  00000000  00001b19  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 00000020  00000000  00000000  00001d93  2**0
+ 10 .debug_ranges 00000028  00000000  00000000  00001bfb  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .text         00000004  00000198  00000198  0000020c  2**1
+ 11 .text         00000004  00000124  00000124  00000178  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 12 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001db4  2**2
+ 12 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001c24  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .text.wait    0000001e  0000017a  0000017a  000001ee  2**1
+ 13 .text.wait    0000001e  000000ca  000000ca  0000011e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 14 .text.setCharliePlexingLed 0000006a  000000ec  000000ec  00000160  2**1
+ 14 .text.__vector_1 0000001e  000000e8  000000e8  0000013c  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.main    00000024  00000156  00000156  000001ca  2**1
+ 15 .text.__vector_2 0000001e  00000106  00000106  0000015a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .data.ledIds  00000006  00800100  0000019c  00000210  2**0
-                  CONTENTS, ALLOC, LOAD, DATA
+ 16 .text.main    00000026  000000a4  000000a4  000000f8  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	0c 94 4a 00 	jmp	0x94	; 0x94 <__ctors_end>
-   4:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-   8:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-   c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  10:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  14:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  18:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  1c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  20:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  24:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  28:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  2c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  30:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  34:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  38:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  3c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  40:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  44:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  48:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  4c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  50:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  54:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  58:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  5c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  60:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  64:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  68:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  6c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  70:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  74:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  78:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  7c:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  80:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  84:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
-  88:	0c 94 cc 00 	jmp	0x198	; 0x198 <__bad_interrupt>
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 74 00 	jmp	0xe8	; 0xe8 <__vector_1>
+   8:	0c 94 83 00 	jmp	0x106	; 0x106 <__vector_2>
+   c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  10:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  14:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  18:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  1c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  20:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  24:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  28:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  2c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  30:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  34:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  38:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  3c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  40:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  44:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  48:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  4c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  50:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  54:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  58:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  5c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  60:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  64:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  68:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  6c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  70:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  74:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  78:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  7c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  80:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  84:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  88:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
 
-0000008c <.dinit>:
-  8c:	01 00       	.word	0x0001	; ????
-  8e:	01 06       	cpc	r0, r17
-  90:	00 01       	movw	r0, r0
-  92:	9c 00       	.word	0x009c	; ????
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	0e 94 52 00 	call	0xa4	; 0xa4 <_etext>
+  9c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <_exit>
 
-00000094 <__ctors_end>:
-  94:	11 24       	eor	r1, r1
-  96:	1f be       	out	0x3f, r1	; 63
-  98:	cf ef       	ldi	r28, 0xFF	; 255
-  9a:	d0 e1       	ldi	r29, 0x10	; 16
-  9c:	de bf       	out	0x3e, r29	; 62
-  9e:	cd bf       	out	0x3d, r28	; 61
+000000a0 <_exit>:
+  a0:	f8 94       	cli
 
-000000a0 <__do_copy_data>:
-  a0:	ec e8       	ldi	r30, 0x8C	; 140
-  a2:	f0 e0       	ldi	r31, 0x00	; 0
-  a4:	40 e0       	ldi	r20, 0x00	; 0
-  a6:	19 c0       	rjmp	.+50     	; 0xda <__do_clear_bss+0x8>
-  a8:	b7 91       	elpm	r27, Z+
-  aa:	a7 91       	elpm	r26, Z+
-  ac:	37 91       	elpm	r19, Z+
-  ae:	27 91       	elpm	r18, Z+
-  b0:	07 91       	elpm	r16, Z+
-  b2:	07 fd       	sbrc	r16, 7
-  b4:	0e c0       	rjmp	.+28     	; 0xd2 <__do_clear_bss>
-  b6:	97 91       	elpm	r25, Z+
-  b8:	87 91       	elpm	r24, Z+
-  ba:	ef 01       	movw	r28, r30
-  bc:	f9 2f       	mov	r31, r25
-  be:	e8 2f       	mov	r30, r24
-  c0:	0b bf       	out	0x3b, r16	; 59
-  c2:	07 90       	elpm	r0, Z+
-  c4:	0d 92       	st	X+, r0
-  c6:	a2 17       	cp	r26, r18
-  c8:	b3 07       	cpc	r27, r19
-  ca:	d9 f7       	brne	.-10     	; 0xc2 <__do_copy_data+0x22>
-  cc:	fe 01       	movw	r30, r28
-  ce:	1b be       	out	0x3b, r1	; 59
-  d0:	04 c0       	rjmp	.+8      	; 0xda <__do_clear_bss+0x8>
-
-000000d2 <__do_clear_bss>:
-  d2:	1d 92       	st	X+, r1
-  d4:	a2 17       	cp	r26, r18
-  d6:	b3 07       	cpc	r27, r19
-  d8:	e1 f7       	brne	.-8      	; 0xd2 <__do_clear_bss>
-  da:	e3 39       	cpi	r30, 0x93	; 147
-  dc:	f4 07       	cpc	r31, r20
-  de:	21 f7       	brne	.-56     	; 0xa8 <__do_copy_data+0x8>
-  e0:	0e 94 ab 00 	call	0x156	; 0x156 <main>
-  e4:	0c 94 74 00 	jmp	0xe8	; 0xe8 <_exit>
-
-000000e8 <_exit>:
-  e8:	f8 94       	cli
-
-000000ea <__stop_program>:
-  ea:	ff cf       	rjmp	.-2      	; 0xea <__stop_program>
+000000a2 <__stop_program>:
+  a2:	ff cf       	rjmp	.-2      	; 0xa2 <__stop_program>
 
 Disassembly of section .text:
 
-00000198 <__bad_interrupt>:
- 198:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+00000124 <__bad_interrupt>:
+ 124:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 Disassembly of section .text.wait:
 
-0000017a <wait>:
-#include <xc.h>
+000000ca <wait>:
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
-void wait( int ms ){
+void wait( int ms ) {
 	for (int i=0; i<ms; i++) {
- 17a:	20 e0       	ldi	r18, 0x00	; 0
- 17c:	30 e0       	ldi	r19, 0x00	; 0
- 17e:	08 c0       	rjmp	.+16     	; 0x190 <wait+0x16>
+  ca:	20 e0       	ldi	r18, 0x00	; 0
+  cc:	30 e0       	ldi	r19, 0x00	; 0
+  ce:	08 c0       	rjmp	.+16     	; 0xe0 <wait+0x16>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 180:	ef ec       	ldi	r30, 0xCF	; 207
- 182:	f7 e0       	ldi	r31, 0x07	; 7
- 184:	31 97       	sbiw	r30, 0x01	; 1
- 186:	f1 f7       	brne	.-4      	; 0x184 <wait+0xa>
- 188:	00 c0       	rjmp	.+0      	; 0x18a <wait+0x10>
- 18a:	00 00       	nop
- 18c:	2f 5f       	subi	r18, 0xFF	; 255
- 18e:	3f 4f       	sbci	r19, 0xFF	; 255
- 190:	28 17       	cp	r18, r24
- 192:	39 07       	cpc	r19, r25
- 194:	ac f3       	brlt	.-22     	; 0x180 <wait+0x6>
-		_delay_ms( 1 );
-	}	
+  d0:	ef ec       	ldi	r30, 0xCF	; 207
+  d2:	f7 e0       	ldi	r31, 0x07	; 7
+  d4:	31 97       	sbiw	r30, 0x01	; 1
+  d6:	f1 f7       	brne	.-4      	; 0xd4 <wait+0xa>
+  d8:	00 c0       	rjmp	.+0      	; 0xda <wait+0x10>
+  da:	00 00       	nop
+  dc:	2f 5f       	subi	r18, 0xFF	; 255
+  de:	3f 4f       	sbci	r19, 0xFF	; 255
+  e0:	28 17       	cp	r18, r24
+  e2:	39 07       	cpc	r19, r25
+  e4:	ac f3       	brlt	.-22     	; 0xd0 <wait+0x6>
+		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
+	}
 }
- 196:	08 95       	ret
+  e6:	08 95       	ret
 
-Disassembly of section .text.setCharliePlexingLed:
+Disassembly of section .text.__vector_1:
 
-000000ec <setCharliePlexingLed>:
+000000e8 <__vector_1>:
 
-int ledIds[3] = {0b00000001, 0b00000010, 0b00000100};
-	
 
-void setCharliePlexingLed(int led){
-	switch(led){
-  ec:	83 30       	cpi	r24, 0x03	; 3
-  ee:	91 05       	cpc	r25, r1
-  f0:	d1 f0       	breq	.+52     	; 0x126 <setCharliePlexingLed+0x3a>
-  f2:	34 f4       	brge	.+12     	; 0x100 <setCharliePlexingLed+0x14>
-  f4:	81 30       	cpi	r24, 0x01	; 1
-  f6:	91 05       	cpc	r25, r1
-  f8:	51 f0       	breq	.+20     	; 0x10e <setCharliePlexingLed+0x22>
-  fa:	02 97       	sbiw	r24, 0x02	; 2
-  fc:	71 f0       	breq	.+28     	; 0x11a <setCharliePlexingLed+0x2e>
-  fe:	08 95       	ret
- 100:	85 30       	cpi	r24, 0x05	; 5
- 102:	91 05       	cpc	r25, r1
- 104:	e1 f0       	breq	.+56     	; 0x13e <setCharliePlexingLed+0x52>
- 106:	ac f0       	brlt	.+42     	; 0x132 <setCharliePlexingLed+0x46>
- 108:	06 97       	sbiw	r24, 0x06	; 6
- 10a:	f9 f0       	breq	.+62     	; 0x14a <setCharliePlexingLed+0x5e>
- 10c:	08 95       	ret
-		case 1:
-		DDRD = 0b11111011;
- 10e:	8b ef       	ldi	r24, 0xFB	; 251
- 110:	81 bb       	out	0x11, r24	; 17
-		PORTD = ledIds[0];
- 112:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ISR( INT0_vect ) {
+  e8:	1f 92       	push	r1
+  ea:	0f 92       	push	r0
+  ec:	0f b6       	in	r0, 0x3f	; 63
+  ee:	0f 92       	push	r0
+  f0:	11 24       	eor	r1, r1
+  f2:	8f 93       	push	r24
+    PORTD |= (1<<5);		
+  f4:	82 b3       	in	r24, 0x12	; 18
+  f6:	80 62       	ori	r24, 0x20	; 32
+  f8:	82 bb       	out	0x12, r24	; 18
+}
+  fa:	8f 91       	pop	r24
+  fc:	0f 90       	pop	r0
+  fe:	0f be       	out	0x3f, r0	; 63
+ 100:	0f 90       	pop	r0
+ 102:	1f 90       	pop	r1
+ 104:	18 95       	reti
+
+Disassembly of section .text.__vector_2:
+
+00000106 <__vector_2>:
+
+
+ISR( INT1_vect ) {
+ 106:	1f 92       	push	r1
+ 108:	0f 92       	push	r0
+ 10a:	0f b6       	in	r0, 0x3f	; 63
+ 10c:	0f 92       	push	r0
+ 10e:	11 24       	eor	r1, r1
+ 110:	8f 93       	push	r24
+    PORTD &= ~(1<<5);		
+ 112:	82 b3       	in	r24, 0x12	; 18
+ 114:	8f 7d       	andi	r24, 0xDF	; 223
  116:	82 bb       	out	0x12, r24	; 18
-		
-		break;
- 118:	08 95       	ret
-		case 2:
-		DDRD = 0b11111011;
- 11a:	8b ef       	ldi	r24, 0xFB	; 251
- 11c:	81 bb       	out	0x11, r24	; 17
-		PORTD = ledIds[1];
- 11e:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__DATA_REGION_ORIGIN__+0x2>
- 122:	82 bb       	out	0x12, r24	; 18
-		break;
- 124:	08 95       	ret
-		
-		case 3:
-		DDRD = 0b11111110;
- 126:	8e ef       	ldi	r24, 0xFE	; 254
- 128:	81 bb       	out	0x11, r24	; 17
-		PORTD = ledIds[1];
- 12a:	80 91 02 01 	lds	r24, 0x0102	; 0x800102 <__DATA_REGION_ORIGIN__+0x2>
- 12e:	82 bb       	out	0x12, r24	; 18
-		break;
- 130:	08 95       	ret
-		
-		case 4:
-		DDRD = 0b11111110;
- 132:	8e ef       	ldi	r24, 0xFE	; 254
- 134:	81 bb       	out	0x11, r24	; 17
-		PORTD = ledIds[2];
- 136:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <__DATA_REGION_ORIGIN__+0x4>
- 13a:	82 bb       	out	0x12, r24	; 18
-		break;
- 13c:	08 95       	ret
-		case 5:
-		DDRD = 0b11111101;
- 13e:	8d ef       	ldi	r24, 0xFD	; 253
- 140:	81 bb       	out	0x11, r24	; 17
-		PORTD = ledIds[0];
- 142:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
- 146:	82 bb       	out	0x12, r24	; 18
-		break;
- 148:	08 95       	ret
-		case 6:
-		DDRD = 0b11111101;
- 14a:	8d ef       	ldi	r24, 0xFD	; 253
- 14c:	81 bb       	out	0x11, r24	; 17
-		PORTD = ledIds[2];
- 14e:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <__DATA_REGION_ORIGIN__+0x4>
- 152:	82 bb       	out	0x12, r24	; 18
- 154:	08 95       	ret
+}
+ 118:	8f 91       	pop	r24
+ 11a:	0f 90       	pop	r0
+ 11c:	0f be       	out	0x3f, r0	; 63
+ 11e:	0f 90       	pop	r0
+ 120:	1f 90       	pop	r1
+ 122:	18 95       	reti
 
 Disassembly of section .text.main:
 
-00000156 <main>:
-	}
-	
-}	
-	
+000000a4 <main>:
+notes:			Slow background task after init ISR
+Version :    	DMK, Initial code
+*******************************************************************/
 int main( void ) {
-	DDRD = 0b11111111; // Alle pins van DDRD worden als output gezet.
- 156:	8f ef       	ldi	r24, 0xFF	; 255
- 158:	81 bb       	out	0x11, r24	; 17
+	// Init I/O
+	DDRD = 0xF0;			// PORTD(7:4) output, PORTD(3:0) input	
+  a4:	80 ef       	ldi	r24, 0xF0	; 240
+  a6:	81 bb       	out	0x11, r24	; 17
+
+	// Init Interrupt hardware
+	EICRA |= 0x0B;			// INT1 falling edge, INT0 rising edge
+  a8:	ea e6       	ldi	r30, 0x6A	; 106
+  aa:	f0 e0       	ldi	r31, 0x00	; 0
+  ac:	80 81       	ld	r24, Z
+  ae:	8b 60       	ori	r24, 0x0B	; 11
+  b0:	80 83       	st	Z, r24
+	EIMSK |= 0x03;			// Enable INT1 & INT0
+  b2:	89 b7       	in	r24, 0x39	; 57
+  b4:	83 60       	ori	r24, 0x03	; 3
+  b6:	89 bf       	out	0x39, r24	; 57
 	
-		int i = 1;
- 15a:	c1 e0       	ldi	r28, 0x01	; 1
- 15c:	d0 e0       	ldi	r29, 0x00	; 0
-		
-		while(1){
-			
-			setCharliePlexingLed(i);
- 15e:	ce 01       	movw	r24, r28
- 160:	0e 94 76 00 	call	0xec	; 0xec <__data_load_end>
-			i++;
- 164:	21 96       	adiw	r28, 0x01	; 1
-			
-			if (i > 6)
- 166:	c7 30       	cpi	r28, 0x07	; 7
- 168:	d1 05       	cpc	r29, r1
- 16a:	14 f0       	brlt	.+4      	; 0x170 <main+0x1a>
-			{
-				i= 1;
- 16c:	c1 e0       	ldi	r28, 0x01	; 1
- 16e:	d0 e0       	ldi	r29, 0x00	; 0
-			}
-			
-			wait(500);				
- 170:	84 ef       	ldi	r24, 0xF4	; 244
- 172:	91 e0       	ldi	r25, 0x01	; 1
- 174:	0e 94 bd 00 	call	0x17a	; 0x17a <wait>
-		
-	}
- 178:	f2 cf       	rjmp	.-28     	; 0x15e <main+0x8>
+	// Enable global interrupt system
+	//SREG = 0x80;			// Of direct via SREG of via wrapper
+	sei();				
+  b8:	78 94       	sei
+
+	while (1) {
+		PORTD ^= (1<<7);	// Toggle PORTD.7
+  ba:	82 b3       	in	r24, 0x12	; 18
+  bc:	80 58       	subi	r24, 0x80	; 128
+  be:	82 bb       	out	0x12, r24	; 18
+		wait( 500 );								
+  c0:	84 ef       	ldi	r24, 0xF4	; 244
+  c2:	91 e0       	ldi	r25, 0x01	; 1
+  c4:	0e 94 65 00 	call	0xca	; 0xca <wait>
+  c8:	f8 cf       	rjmp	.-16     	; 0xba <main+0x16>

@@ -1,69 +1,47 @@
-
 #define F_CPU 8e6
-#include <xc.h>
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
-void wait( int ms ){
+void wait( int ms ) {
 	for (int i=0; i<ms; i++) {
-		_delay_ms( 1 );
-	}	
+		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
+	}
 }
 
-int ledIds[3] = {0b00000001, 0b00000010, 0b00000100};
-	
-//methode zorgt ervoor dat er bepaalt wordt door de switch-case wat de volgerde wordt en wat de tri-state wordt.
-void setCharliePlexingLed(int led){
-	switch(led){
-		case 1:
-		DDRD = 0b11111011;
-		PORTD = ledIds[0];
-		asdasdas
-		break;sdfsdfs
-		case 2:
-		DDRD = 0b11111011;
-		PORTD = ledIds[1];
-		break;
-		
-		case 3:
-		DDRD = 0b11111110;
-		PORTD = ledIds[1];
-		break;
-		
-		case 4:
-		DDRD = 0b11111110;
-		PORTD = ledIds[2];
-		break;
-		case 5:
-		DDRD = 0b11111101;
-		PORTD = ledIds[0];
-		break;
-		case 6:
-		DDRD = 0b11111101;
-		PORTD = ledIds[2];
-		break;
-	}
-	
-}	
-	
+
+ISR( INT0_vect ) {
+    PORTD |= (1<<5);		
+}
+
+
+ISR( INT1_vect ) {
+    PORTD &= ~(1<<5);		
+}
+
+/******************************************************************
+short:			main() loop, entry point of executable
+inputs:
+outputs:
+notes:			Slow background task after init ISR
+Version :    	DMK, Initial code
+*******************************************************************/
 int main( void ) {
-	DDRD = 0b11111111; // Alle pins van DDRD worden als output gezet.
-	int i = 1;
-		
-	while(1){			
-		//De methode met als parameter welke lampje aan de beurt is.
-		setCharliePlexingLed(i);
-		
-		//Na het versturen wordt het met één opgehoogd om de volgende lamp aan te roepen.
-		i++;
-			
-		//Check of de 6e lamp al is aangeroepen zoja, dan begint de teller weer op 1;
-		if (i > 6) {
-			i = 1;
-		}			
-		wait(500);						
-	}
+	// Init I/O
+	DDRD = 0xF0;			// PORTD(7:4) output, PORTD(3:0) input	
+
+	// Init Interrupt hardware
+	EICRA |= 0x0B;			// INT1 falling edge, INT0 rising edge
+	EIMSK |= 0x03;			// Enable INT1 & INT0
 	
+	// Enable global interrupt system
+	//SREG = 0x80;			// Of direct via SREG of via wrapper
+	sei();				
+
+	while (1) {
+		PORTD ^= (1<<7);	// Toggle PORTD.7
+		wait( 500 );								
+	}
+
 	return 1;
 }
-
