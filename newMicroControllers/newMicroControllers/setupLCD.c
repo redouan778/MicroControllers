@@ -106,3 +106,23 @@ void clear_the_LCD() {
 void set_cursor(int position) {
 	lcd_write_command((position | (1<<7)));
 }
+
+
+int main( void ) {
+	_delay_ms(5000);
+	
+	init();
+	
+	_delay_ms(100);
+	
+	clear_the_LCD();
+
+	display_text("test123");
+	set_cursor(5);
+
+	while (1) {
+		_delay_ms( 250 );
+	}
+
+	return 1;
+}
