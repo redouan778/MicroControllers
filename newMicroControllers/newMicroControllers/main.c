@@ -1,48 +1,39 @@
 #define F_CPU 8e6
-
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-void wait( int ms ) {
-	for (int i=0; i<ms; i++) {
-		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
+#define BIT(x)	(1 << (x))
+
+void wait( int ms )
+{
+	for (int tms=0; tms<ms; tms++)
+	{
+		_delay_ms( 1 );			// library function (max 30 ms at 8MHz)
 	}
 }
 
-void timer2Init( void ) {
-	OCR2 = 195;
-	TIMSK |= 0b10000000;
-	sei();
-	TCCR2 = 0b00000101;
+//Setup the the admux & adcsrqa
+void adcInit( void )
+{
+	ADMUX = 0b01100001;			// AREF=VCC, result left adjusted, channel1 at pin PF1
+	ADCSRA = 0b11100110;		// ADC-enable, no interrupt, start, free running, division by 64
 }
 
 
-ISR( TIMER2_OVF_vect ) {
-	if (OCR2 == 195) {
-		PORTD = 0b10000000;
-		OCR2 = 117;
-		}else if(OCR2 == 117){
-		PORTD = 0b00000000;
-		OCR2 = 195;
-	}
-}
+// Main program: ADC at PF1
+int main( void )
+{
+	DDRF = 0x00;				// set PORTF for input (ADC)
+	DDRA = 0xFF;				// set PORTA for output 
+	DDRB = 0xFF;				// set PORTB for output
+	adcInit();					// initialize ADC
 
-
-void init(){
-	DDRD &= 0b11111111;
-}
-
-int main(void) {
-	DDRB = 0xFF;
-	init();
-	
-	timer2Init();
-	PORTD = 0b00000000;
-	
-	while (1) {
+	while (1)
+	{
 		
-		wait(10);
-		
+		PORTB = ADCL;			// Show MSB/LSB (bit 10:0) of ADC
+		PORTA = ADCH;
+		wait(100);				// every 100 ms (busy waiting)
 	}
 }
