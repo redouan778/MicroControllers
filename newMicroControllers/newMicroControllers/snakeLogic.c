@@ -20,7 +20,7 @@ void initSnake()
     for(int i = 0; i < length; i++)
     {
         segment seg = {.pos = {3 + i, 3}};
-        snake[i];
+        snake[i] = seg;
     }
 }
 
