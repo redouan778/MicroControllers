@@ -21,7 +21,6 @@ void adcInit( void )
 }
 
 
-// Main program: ADC at PF1
 int main( void )
 {
 	DDRF = 0x00;				// set PORTF for input (ADC)
@@ -32,8 +31,8 @@ int main( void )
 	while (1)
 	{
 		
-		PORTB = ADCL;			// Show MSB/LSB (bit 10:0) of ADC
+		PORTB = ADCL;			
 		PORTA = ADCH;
-		wait(100);				// every 100 ms (busy waiting)
+		wait(100);				
 	}
 }
