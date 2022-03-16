@@ -1,16 +1,11 @@
 #include <stdio.h>
 #include "snakeLogic.h"
 
-#define X 0
-#define Y 1
+
 
 #define MAX 10
 
 static void advanceSnake(type);
-
-typedef struct{
-    int pos[2];
-} segment;
 
 static segment snake[MAX] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
 static int length = 3;
@@ -24,6 +19,9 @@ void initSnake()
     }
 }
 
+segment *getSnake(){
+	return snake;
+}
 void moveUp(type movementType)
 {
     if (snake[0].pos[Y] == 1)

@@ -122,6 +122,12 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="snakeLogic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="snakeLogic.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
