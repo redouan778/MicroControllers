@@ -1,153 +1,135 @@
 #define F_CPU 8e6
 #include <avr/io.h>
 #include <util/delay.h>
-#include <avr/interrupt.h>
-#include <stdio.h>
-#define BIT(x)	(1 << (x))
 
+/******************************************************************/
+void twi_init(void)
+/* 
+short:			Init AVR TWI interface and set bitrate
+inputs:			
+outputs:	
+notes:			TWI clock is set to 100 kHz
+Version :    	DMK, Initial code
+*******************************************************************/
+{
+	TWSR = 0;
+	TWBR = 32;	 // TWI clock set to 100kHz, prescaler = 0
+}
 
+/******************************************************************/
+void twi_start(void)
+/* 
+short:			Generate TWI start condition
+inputs:		
+outputs:	
+notes:			
+Version :    	DMK, Initial code
+*******************************************************************/
+{
+	TWCR = (0x80 | 0x20 | 0x04);
+	while( 0x00 == (TWCR & 0x80) );
+}
 
+/******************************************************************/
+void twi_stop(void)
+/* 
+short:			Generate TWI stop condition
+inputs:		
+outputs:	
+notes:			
+Version :    	DMK, Initial code
+*******************************************************************/
+{
+	TWCR = (0x80 | 0x10 | 0x04);
+}
 
-#define LCD_E 	6  // RA6 UNI-6
-#define LCD_RS	4  // RA4 UNI-6
+/******************************************************************/
+void twi_tx(unsigned char data)
+/* 
+short:			transmit 8 bits data
+inputs:		
+outputs:	
+notes:			
+Version :    	DMK, Initial code
+*******************************************************************/
+{
+	TWDR = data;
+	TWCR = (0x80 | 0x04);
+	while( 0 == (TWCR & 0x80) );
+}
 
-void lcd_strobe_lcd_e(void);
-void init_4bits_mode(void);
-void lcd_write_string(char *str);
-void lcd_write_data(unsigned char byte);
-void lcd_write_cmd(unsigned char byte);
-void lcd_clear(void);
-
-
-// wait(): busy waiting for 'ms' millisecond
-// Used library: util/delay.h
-void wait( int ms ){
-	for (int tms=0; tms<ms; tms++){
-		_delay_ms( 1 );			// library function (max 30 ms at 8MHz)
+/******************************************************************/
+void wait( int ms )
+/* 
+short:			Busy wait number of millisecs
+inputs:			int ms (Number of millisecs to busy wait)
+outputs:	
+notes:			Busy wait, not very accurate. Make sure (external)
+				clock value is set. This is used by _delay_ms inside
+				util/delay.h
+Version :    	DMK, Initial code
+*******************************************************************/
+{
+	for (int i=0; i<ms; i++)
+	{
+		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
 	}
 }
 
-void lcd_strobe_lcd_e(void) {
-	PORTA |= (1<<LCD_E);	// E high
-	_delay_ms(1);			// nodig
-	PORTA &= ~(1<<LCD_E);  	// E low
-	_delay_ms(1);			// nodig?
-}
-
-
-void init() {
-	// PORTC output mode and all low (also E and RS pin)
+/******************************************************************/
+int main( void )
+/* 
+short:			main() loop, entry point of executable
+inputs:			
+outputs:	
+notes:			Looping forever, trashing the HT16K33
+Version :    	DMK, Initial code
+*******************************************************************/
+{
 	
-	DDRC = 0xFF;
-	PORTC = 0xFF;
+	twi_init();		// Init TWI interface
+
+	// Init HT16K22. Page 32 datasheet
+	twi_start();
+	twi_tx(0xE0);	// Display I2C addres + R/W bit
+	twi_tx(0x21);	// Internal osc on (page 10 HT16K33)
+	twi_stop();
+
+	twi_start();
+	twi_tx(0xE0);	// Display I2C address + R/W bit
+	twi_tx(0xA0);	// HT16K33 pins all output
+	twi_stop();
+
+	twi_start();
+	twi_tx(0xE0);	// Display I2C address + R/W bit
+	twi_tx(0xE3);	// Display Dimming 4/16 duty cycle
+	twi_stop();
+
+	twi_start();
+	twi_tx(0xE0);	// Display I2C address + R/W bit
+	twi_tx(0x81);	// Display OFF - Blink On
+	twi_stop();
 	
-	DDRD = 0xFF;
-	DDRA = 0xFF;
-	PORTC = 0x00;
-	PORTA = 0x00;
-	
-
-	// Step 2 (table 12)
-	PORTC = 0x20;	// function set
-	lcd_strobe_lcd_e();
-
-	// Step 3 (table 12)
-	PORTC = 0x20;   // function set
-	lcd_strobe_lcd_e();
-	PORTC = 0x80;
-	lcd_strobe_lcd_e();
-
-	// Step 4 (table 12)
-	PORTC = 0x00;   // Display on/off control
-	lcd_strobe_lcd_e();
-	PORTC = 0xF0;
-	lcd_strobe_lcd_e();
-
-	// Step 4 (table 12)
-	PORTC = 0x00;   // Entry mode set
-	lcd_strobe_lcd_e();
-	PORTC = 0x60;
-	lcd_strobe_lcd_e();
-}
 
 
-void display_text(char *str) {
-	
-	for(;*str; str++){
-		
-		unsigned char byte = *str;
-		
-		PORTC = byte;
-		PORTA |= (1<<LCD_RS);
-		lcd_strobe_lcd_e();
+	while (1)
+	{
+		twi_start();
+		twi_tx(0xE0);	// Display I2C addres + R/W bit
+		twi_tx(0x04);	// Address
+		twi_tx(0x00);	// data
+		twi_stop();
 
-		// Second nibble
-		PORTC = (byte<<4);
-		PORTA |= (1<<LCD_RS);
-		lcd_strobe_lcd_e();
-	}
-}
+		wait(500);	
 
+		twi_start();
+		twi_tx(0xE0);	// Display I2C addres + R/W bit
+		twi_tx(0x04);	// Address RIJ
+		twi_tx(0x08);	// data  KOLUMN
+		twi_stop();	
 
-void lcd_write_command(unsigned char byte) {
-	// First nibble.
-	PORTC = byte;
-	PORTA &= ~(1<<LCD_RS);
-	lcd_strobe_lcd_e();
+		wait(500);
+	}	
 
-	// Second nibble
-	PORTC = (byte<<4);
-	PORTA &= ~(1<<LCD_RS);
-	lcd_strobe_lcd_e();
-}
-
-
-void clear_the_LCD() {
-	lcd_write_command (0x01);
-	_delay_ms(200);
-	lcd_write_command (0x80);
-}
-
-void set_cursor(int position) {
-	lcd_write_command((position | (1<<7)));
-}
-
-
-
-
-
-
-
-
-
-
-// Initialize ADC: 
-void adcInit( void ){
-	ADMUX = 0b11100001;			// AREF=2,56 V, result left adjusted, channel1 at pin PF1
-	ADCSRA = 0b10000110;		// ADC-enable, no interrupt, no free running, division by 64
-}
-
-
-// Main program: Counting on T1
-int main( void ){
-	init();
-
-	DDRF = 0x00;					// set PORTF for input (ADC)
-	DDRA = 0xFF;					// set PORTA for output 
-	adcInit();						// initialize ADC
-
-	int currentValue;
-	char* valueConverter;
-	while (1) {			
-		ADCSRA |= BIT(6);				// Start ADC
-		while ( ADCSRA & BIT(6) ) ;		// Wait for completion
-		PORTA = ADCH;	
-		
-		currentValue = ADCH + ADCL * 256;						
-			
-		sprintf(valueConverter, "%d", currentValue);		
-		
-		display_text(valueConverter);
-		wait(500);						// every 50 ms (busy waiting)
-	}
+	return 1;
 }
