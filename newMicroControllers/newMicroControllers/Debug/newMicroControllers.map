@@ -17,8 +17,6 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 snakeLogic.o
  .text.advanceSnake
                 0x0000000000000000       0x8c snakeLogic.o
- .text.getSnake
-                0x0000000000000000        0x6 snakeLogic.o
  .text.moveUp   0x0000000000000000       0x22 snakeLogic.o
  .text.moveDown
                 0x0000000000000000       0x22 snakeLogic.o
@@ -351,49 +349,49 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xb8
+.debug_aranges  0x0000000000000000       0xe0
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x60 main.o
+                0x0000000000000000       0x88 main.o
  .debug_aranges
-                0x0000000000000060       0x58 snakeLogic.o
+                0x0000000000000088       0x58 snakeLogic.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x1451
+.debug_info     0x0000000000000000     0x1658
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_info    0x0000000000000780      0x7d4 main.o
- .debug_info    0x0000000000000f54      0x4fd snakeLogic.o
+ .debug_info    0x0000000000000780      0x9cb main.o
+ .debug_info    0x000000000000114b      0x50d snakeLogic.o
 
-.debug_abbrev   0x0000000000000000      0x9e3
+.debug_abbrev   0x0000000000000000      0xa63
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_abbrev  0x0000000000000718      0x185 main.o
- .debug_abbrev  0x000000000000089d      0x146 snakeLogic.o
+ .debug_abbrev  0x0000000000000718      0x1fd main.o
+ .debug_abbrev  0x0000000000000915      0x14e snakeLogic.o
 
-.debug_line     0x0000000000000000      0x601
+.debug_line     0x0000000000000000      0x6b2
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x16d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_line    0x000000000000016d      0x300 main.o
- .debug_line    0x000000000000046d      0x194 snakeLogic.o
+ .debug_line    0x000000000000016d      0x3ab main.o
+ .debug_line    0x0000000000000518      0x19a snakeLogic.o
 
-.debug_frame    0x0000000000000000      0x144
+.debug_frame    0x0000000000000000      0x2d0
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xb0 main.o
- .debug_frame   0x00000000000000b0       0x94 snakeLogic.o
+ .debug_frame   0x0000000000000000      0x23c main.o
+ .debug_frame   0x000000000000023c       0x94 snakeLogic.o
 
-.debug_str      0x0000000000000000      0x294
+.debug_str      0x0000000000000000      0x29d
  *(.debug_str)
  .debug_str     0x0000000000000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_str     0x000000000000027d        0xa main.o
- .debug_str     0x0000000000000287        0xd snakeLogic.o
+ .debug_str     0x000000000000027d       0x13 main.o
+ .debug_str     0x0000000000000290        0xd snakeLogic.o
 
-.debug_loc      0x0000000000000000      0x24c
+.debug_loc      0x0000000000000000      0x6e5
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x112 main.o
- .debug_loc     0x0000000000000112      0x13a snakeLogic.o
+ .debug_loc     0x0000000000000000      0x585 main.o
+ .debug_loc     0x0000000000000585      0x160 snakeLogic.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -413,10 +411,10 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x98
+.debug_ranges   0x0000000000000000       0xc0
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x50 main.o
- .debug_ranges  0x0000000000000050       0x48 snakeLogic.o
+ .debug_ranges  0x0000000000000000       0x78 main.o
+ .debug_ranges  0x0000000000000078       0x48 snakeLogic.o
 
 .debug_macro
  *(.debug_macro)
@@ -432,94 +430,125 @@ LOAD data_init
 .bss.snake      0x0000000000800100       0x28
  .bss.snake     0x0000000000800100       0x28 snakeLogic.o
 
+.text.display_snake
+                0x00000000000000f0       0xbe
+ .text.display_snake
+                0x00000000000000f0       0xbe main.o
+                0x00000000000000f0                display_snake
+
 .text.clearMatrixBoard
-                0x00000000000000f0       0x62
+                0x00000000000001ae       0x62
  .text.clearMatrixBoard
-                0x00000000000000f0       0x62 main.o
-                0x00000000000000f0                clearMatrixBoard
+                0x00000000000001ae       0x62 main.o
+                0x00000000000001ae                clearMatrixBoard
 
-.text.main      0x0000000000000152       0x56
- .text.main     0x0000000000000152       0x56 main.o
-                0x0000000000000152                main
+.text.__vector_5
+                0x0000000000000210       0x58
+ .text.__vector_5
+                0x0000000000000210       0x58 main.o
+                0x0000000000000210                __vector_5
 
-.text.startTWI  0x00000000000001a8       0x52
+.text.__vector_6
+                0x0000000000000268       0x58
+ .text.__vector_6
+                0x0000000000000268       0x58 main.o
+                0x0000000000000268                __vector_6
+
+.text.__vector_7
+                0x00000000000002c0       0x58
+ .text.__vector_7
+                0x00000000000002c0       0x58 main.o
+                0x00000000000002c0                __vector_7
+
+.text.__vector_8
+                0x0000000000000318       0x58
+ .text.__vector_8
+                0x0000000000000318       0x58 main.o
+                0x0000000000000318                __vector_8
+
+.text.startTWI  0x0000000000000370       0x52
  .text.startTWI
-                0x00000000000001a8       0x52 main.o
-                0x00000000000001a8                startTWI
+                0x0000000000000370       0x52 main.o
+                0x0000000000000370                startTWI
 
 .text.initSnake
-                0x00000000000001fa       0x38
+                0x00000000000003c2       0x38
  .text.initSnake
-                0x00000000000001fa       0x38 snakeLogic.o
-                0x00000000000001fa                initSnake
+                0x00000000000003c2       0x38 snakeLogic.o
+                0x00000000000003c2                initSnake
+
+.text.main      0x00000000000003fa       0x32
+ .text.main     0x00000000000003fa       0x32 main.o
+                0x00000000000003fa                main
 
 .text.sendCommand
-                0x0000000000000232       0x28
+                0x000000000000042c       0x28
  .text.sendCommand
-                0x0000000000000232       0x28 main.o
-                0x0000000000000232                sendCommand
+                0x000000000000042c       0x28 main.o
+                0x000000000000042c                sendCommand
 
-.text.wait      0x000000000000025a       0x1e
- .text.wait     0x000000000000025a       0x1e main.o
-                0x000000000000025a                wait
+.text.wait      0x0000000000000454       0x1e
+ .text.wait     0x0000000000000454       0x1e main.o
+                0x0000000000000454                wait
 
-.text.twi_tx    0x0000000000000278       0x14
- .text.twi_tx   0x0000000000000278       0x14 main.o
-                0x0000000000000278                twi_tx
+.text.getSnake  0x0000000000000472       0x18
+ .text.getSnake
+                0x0000000000000472       0x18 snakeLogic.o
+                0x0000000000000472                getSnake
+
+.text.twi_tx    0x000000000000048a       0x14
+ .text.twi_tx   0x000000000000048a       0x14 main.o
+                0x000000000000048a                twi_tx
 
 .text.twi_start
-                0x000000000000028c       0x10
+                0x000000000000049e       0x10
  .text.twi_start
-                0x000000000000028c       0x10 main.o
-                0x000000000000028c                twi_start
+                0x000000000000049e       0x10 main.o
+                0x000000000000049e                twi_start
 
-.text.twi_init  0x000000000000029c        0xc
+.text.twi_init  0x00000000000004ae        0xc
  .text.twi_init
-                0x000000000000029c        0xc main.o
-                0x000000000000029c                twi_init
+                0x00000000000004ae        0xc main.o
+                0x00000000000004ae                twi_init
 
-.text.twi_stop  0x00000000000002a8        0x8
+.text.twi_stop  0x00000000000004ba        0x8
  .text.twi_stop
-                0x00000000000002a8        0x8 main.o
-                0x00000000000002a8                twi_stop
+                0x00000000000004ba        0x8 main.o
+                0x00000000000004ba                twi_stop
 
-.text           0x00000000000002b0        0x4
- .text          0x00000000000002b0        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
-                0x00000000000002b0                __vector_22
-                0x00000000000002b0                __vector_28
-                0x00000000000002b0                __vector_1
-                0x00000000000002b0                __vector_32
-                0x00000000000002b0                __vector_34
-                0x00000000000002b0                __vector_24
-                0x00000000000002b0                __vector_12
-                0x00000000000002b0                __bad_interrupt
-                0x00000000000002b0                __vector_6
-                0x00000000000002b0                __vector_31
-                0x00000000000002b0                __vector_3
-                0x00000000000002b0                __vector_23
-                0x00000000000002b0                __vector_30
-                0x00000000000002b0                __vector_25
-                0x00000000000002b0                __vector_11
-                0x00000000000002b0                __vector_13
-                0x00000000000002b0                __vector_17
-                0x00000000000002b0                __vector_19
-                0x00000000000002b0                __vector_7
-                0x00000000000002b0                __vector_27
-                0x00000000000002b0                __vector_5
-                0x00000000000002b0                __vector_33
-                0x00000000000002b0                __vector_4
-                0x00000000000002b0                __vector_9
-                0x00000000000002b0                __vector_2
-                0x00000000000002b0                __vector_21
-                0x00000000000002b0                __vector_15
-                0x00000000000002b0                __vector_29
-                0x00000000000002b0                __vector_8
-                0x00000000000002b0                __vector_26
-                0x00000000000002b0                __vector_14
-                0x00000000000002b0                __vector_10
-                0x00000000000002b0                __vector_16
-                0x00000000000002b0                __vector_18
-                0x00000000000002b0                __vector_20
+.text           0x00000000000004c2        0x4
+ .text          0x00000000000004c2        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
+                0x00000000000004c2                __vector_22
+                0x00000000000004c2                __vector_28
+                0x00000000000004c2                __vector_1
+                0x00000000000004c2                __vector_32
+                0x00000000000004c2                __vector_34
+                0x00000000000004c2                __vector_24
+                0x00000000000004c2                __vector_12
+                0x00000000000004c2                __bad_interrupt
+                0x00000000000004c2                __vector_31
+                0x00000000000004c2                __vector_3
+                0x00000000000004c2                __vector_23
+                0x00000000000004c2                __vector_30
+                0x00000000000004c2                __vector_25
+                0x00000000000004c2                __vector_11
+                0x00000000000004c2                __vector_13
+                0x00000000000004c2                __vector_17
+                0x00000000000004c2                __vector_19
+                0x00000000000004c2                __vector_27
+                0x00000000000004c2                __vector_33
+                0x00000000000004c2                __vector_4
+                0x00000000000004c2                __vector_9
+                0x00000000000004c2                __vector_2
+                0x00000000000004c2                __vector_21
+                0x00000000000004c2                __vector_15
+                0x00000000000004c2                __vector_29
+                0x00000000000004c2                __vector_26
+                0x00000000000004c2                __vector_14
+                0x00000000000004c2                __vector_10
+                0x00000000000004c2                __vector_16
+                0x00000000000004c2                __vector_18
+                0x00000000000004c2                __vector_20
 
-.data.length    0x0000000000800128        0x2 load address 0x00000000000002b4
+.data.length    0x0000000000800128        0x2 load address 0x00000000000004c6
  .data.length   0x0000000000800128        0x2 snakeLogic.o

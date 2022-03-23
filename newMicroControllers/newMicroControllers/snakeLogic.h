@@ -20,4 +20,4 @@ void moveLeft(type);
 void moveRight(type);
 
 void gameOver(void);
-segment *getSnake(void);
+segment getSnake(int index);

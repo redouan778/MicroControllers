@@ -19,8 +19,8 @@ void initSnake()
     }
 }
 
-segment *getSnake(){
-	return snake;
+segment getSnake(int index){
+	return snake[index];
 }
 void moveUp(type movementType)
 {

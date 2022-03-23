@@ -2,6 +2,11 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include "snakeLogic.h"
+#include <avr/interrupt.h>
+
+typedef enum{n, o, z, w} snake_direction;
+
+static snake_direction current_direction = n;
 
 void twi_init(void){
 	TWSR = 0;
@@ -38,8 +43,7 @@ void sendCommand(int addres, int byte){
 		twi_stop();
 }
 
-void clearMatrixBoard(){
-	sendCommand(0x80, 0x00);
+void clearMatrixBoard(){	
 	sendCommand(0x00, 0x00);
 	sendCommand(0x02, 0x00);
 	sendCommand(0x04, 0x00);
@@ -47,16 +51,7 @@ void clearMatrixBoard(){
 	sendCommand(0x08, 0x00);
 	sendCommand(0x0A, 0x00);
 	sendCommand(0x0C, 0x00);
-	
-		/*
-	for (int i = 1; i < 8; i++)
-	{
-		twi_start();
-		twi_tx(0x00);	// Display I2C addres + R/W bit
-		twi_tx(1 << i);	// Internal osc on (page 10 HT16K33)
-		twi_stop();
-	}
-	*/		
+	sendCommand(0x0E, 0x00);	
 }
 
 void startTWI(){
@@ -82,61 +77,72 @@ void startTWI(){
 	twi_stop();
 }
 
+void display_snake(){
+	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+	
+	for (int i = 0; i < 10; i++) {
+		segment currentSegment = getSnake(i);
+		
+		int x = currentSegment.pos[X];
+		int y = currentSegment.pos[Y];
+
+
+		if (x == 1) {
+			x = 0x80;
+			} else{
+			x = 1<<(x - 1);
+		}
+		
+		toSend[y - 1] |= x;
+	}
+	
+	for (int i = 0; i < 8; i++)
+	{
+		sendCommand(2 * i, toSend[i]);
+	}
+	
+}
+
+ISR(INT4_vect){
+	current_direction = w;
+	sendCommand(8, 0x80);
+}
+
+ISR(INT5_vect){
+	current_direction = z;
+	sendCommand(6, 0x80);
+}
+
+ISR(INT6_vect){
+	current_direction = o;
+		sendCommand(4, 0x80);
+}
+
+ISR(INT7_vect){
+	current_direction = n;
+	sendCommand(2, 0x80);
+}
 
 int main( void ){
+	EICRB = 0b11111111; 
+	EIMSK = 0b11110000; 
+	
+	sei();
+	DDRE = 0b00000000;
 	
 	twi_init();		// Init TWI interface
 	startTWI();
 	
 	initSnake();
-	clearMatrixBoard();	
+	clearMatrixBoard();		
 	
-	//Dit zorgt ervoor dat je de array INIT
-	/*	segment *snake = getSnake();
-	
-	for (int i = 0; i < 10; i++)
-	{
-		segment currentSegment = *(snake + sizeof(*snake));
-				
-		int x = currentSegment.pos[X];
-		int y = currentSegment.pos[Y];
-		
-		if (x == 1) {
-			x = 0x80;
-		} else{
-			x = 1<<x;
-		}
-		
-		sendCommand(1<<y, x);
-		
-		//DIT HIER onder kan weg ALS HET GOED IS!!!
-		twi_start();
-		twi_tx(0xE0);	// Display I2C addres + R/W bit
-		twi_tx(1<<y);	// Address
-		twi_tx(x);	// data
-		twi_stop();
-	}	
-	*/
+	wait(500);
 
-
-	while (1)
-	{
-		twi_start();
-		twi_tx(0xE0);	// Display I2C addres + R/W bit
-		twi_tx(0x06);	// Address
-		twi_tx(0x00);	// data
-		twi_stop();
-
-		wait(500);	
-
-		twi_start();
-		twi_tx(0xE0);	// Display I2C addres + R/W bit
-		twi_tx(0x06);	// Address RIJ
-		twi_tx(0x02);	// data  KOLUMN
-		twi_stop();	
-
-		wait(500);
-	}	
+	while(1){
+		display_snake();
+		wait(10);
+	}			
 
 	return 1;
 }
+

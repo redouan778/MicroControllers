@@ -13,7 +13,8 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h \
- .././snakeLogic.h
+ .././snakeLogic.h \
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h:
 
@@ -44,3 +45,5 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\util\delay_basic.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\math.h:
 
 .././snakeLogic.h:
+
+c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\interrupt.h:
