@@ -39,13 +39,14 @@ void sendCommand(int addres, int byte){
 }
 
 void clearMatrixBoard(){
-	
+	sendCommand(0x80, 0x00);
+	sendCommand(0x00, 0x00);
 	sendCommand(0x02, 0x00);
 	sendCommand(0x04, 0x00);
 	sendCommand(0x06, 0x00);
 	sendCommand(0x08, 0x00);
-	sendCommand(0xA0, 0x00);
-	sendCommand(0xC0, 0x00);
+	sendCommand(0x0A, 0x00);
+	sendCommand(0x0C, 0x00);
 	
 		/*
 	for (int i = 1; i < 8; i++)
@@ -122,7 +123,7 @@ int main( void ){
 	{
 		twi_start();
 		twi_tx(0xE0);	// Display I2C addres + R/W bit
-		twi_tx(0x04);	// Address
+		twi_tx(0x06);	// Address
 		twi_tx(0x00);	// data
 		twi_stop();
 
@@ -130,8 +131,8 @@ int main( void ){
 
 		twi_start();
 		twi_tx(0xE0);	// Display I2C addres + R/W bit
-		twi_tx(0x04);	// Address RIJ
-		twi_tx(0x08);	// data  KOLUMN
+		twi_tx(0x06);	// Address RIJ
+		twi_tx(0x02);	// data  KOLUMN
 		twi_stop();	
 
 		wait(500);
