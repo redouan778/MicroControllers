@@ -79,6 +79,10 @@ static void advanceSnake(type movementType)
 {
     for(int i = 1; i < MAX - 1; i++)
     {
+        if (snake[i].pos[X] == snake[0].pos[X] && snake[i].pos[Y] == snake[0].pos[Y])
+        {
+            gameOver();
+        }
         snake[MAX - i] = snake[MAX - i - 1];
     }
     if (movementType == MOVE)
