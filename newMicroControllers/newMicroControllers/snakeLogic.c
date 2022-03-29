@@ -6,6 +6,7 @@
 #define MAX 10
 
 static void advanceSnake(type);
+static void checkSnake();
 
 static segment snake[MAX] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
 static int length = 3;
@@ -31,6 +32,7 @@ void moveUp(type movementType)
     {
         advanceSnake(movementType);
         snake[0].pos[Y]--;
+        checkSnake();
     }
 }
 
@@ -43,6 +45,7 @@ void moveDown(type movementType)
     {
         advanceSnake(movementType);
         snake[0].pos[Y]++;
+        checkSnake();
     }
 }
 
@@ -55,6 +58,7 @@ void moveLeft(type movementType)
     {
         advanceSnake(movementType);
         snake[0].pos[X]--;
+        checkSnake();
     }
 }
 
@@ -67,6 +71,7 @@ void moveRight(type movementType)
     {
         advanceSnake(movementType);
         snake[0].pos[X]++;
+        checkSnake();
     }
 }
 
@@ -79,10 +84,6 @@ static void advanceSnake(type movementType)
 {
     for(int i = 1; i < MAX - 1; i++)
     {
-        if (snake[i].pos[X] == snake[0].pos[X] && snake[i].pos[Y] == snake[0].pos[Y])
-        {
-            gameOver();
-        }
         snake[MAX - i] = snake[MAX - i - 1];
     }
     if (movementType == MOVE)
@@ -92,5 +93,16 @@ static void advanceSnake(type movementType)
     } else
     {
         if (length < MAX) length++;
+    }
+}
+
+static void checkSnake()
+{
+    for(int i = 1; i < MAX - 1; i++)
+    {
+        if (snake[i].pos[X] == snake[0].pos[X] && snake[i].pos[Y] == snake[0].pos[Y])
+        {
+            gameOver();
+        }
     }
 }
