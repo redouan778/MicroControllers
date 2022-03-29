@@ -339,49 +339,49 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x110
+.debug_aranges  0x0000000000000000      0x120
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0xa8 main.o
+                0x0000000000000000       0xb0 main.o
  .debug_aranges
-                0x00000000000000a8       0x68 snakeLogic.o
+                0x00000000000000b0       0x70 snakeLogic.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x18bf
+.debug_info     0x0000000000000000     0x19ae
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x780 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_info    0x0000000000000780      0xb1b main.o
- .debug_info    0x000000000000129b      0x624 snakeLogic.o
+ .debug_info    0x0000000000000780      0xb90 main.o
+ .debug_info    0x0000000000001310      0x69e snakeLogic.o
 
-.debug_abbrev   0x0000000000000000      0xac4
+.debug_abbrev   0x0000000000000000      0xada
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x718 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
  .debug_abbrev  0x0000000000000718      0x227 main.o
- .debug_abbrev  0x000000000000093f      0x185 snakeLogic.o
+ .debug_abbrev  0x000000000000093f      0x19b snakeLogic.o
 
-.debug_line     0x0000000000000000      0x852
+.debug_line     0x0000000000000000      0x8fe
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x16d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
- .debug_line    0x000000000000016d      0x493 main.o
- .debug_line    0x0000000000000600      0x252 snakeLogic.o
+ .debug_line    0x000000000000016d      0x4d6 main.o
+ .debug_line    0x0000000000000643      0x2bb snakeLogic.o
 
-.debug_frame    0x0000000000000000      0x2a0
+.debug_frame    0x0000000000000000      0x2e8
  *(.debug_frame)
- .debug_frame   0x0000000000000000      0x1e0 main.o
- .debug_frame   0x00000000000001e0       0xc0 snakeLogic.o
+ .debug_frame   0x0000000000000000      0x20c main.o
+ .debug_frame   0x000000000000020c       0xdc snakeLogic.o
 
-.debug_str      0x0000000000000000      0x2f5
+.debug_str      0x0000000000000000      0x302
  *(.debug_str)
  .debug_str     0x0000000000000000      0x27d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
  .debug_str     0x000000000000027d       0x3e main.o
- .debug_str     0x00000000000002bb       0x3a snakeLogic.o
+ .debug_str     0x00000000000002bb       0x47 snakeLogic.o
 
-.debug_loc      0x0000000000000000      0x662
+.debug_loc      0x0000000000000000      0x73a
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x433 main.o
- .debug_loc     0x0000000000000433      0x22f snakeLogic.o
+ .debug_loc     0x0000000000000000      0x4b8 main.o
+ .debug_loc     0x00000000000004b8      0x282 snakeLogic.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -401,10 +401,10 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0xf0
+.debug_ranges   0x0000000000000000      0x100
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x98 main.o
- .debug_ranges  0x0000000000000098       0x58 snakeLogic.o
+ .debug_ranges  0x0000000000000000       0xa0 main.o
+ .debug_ranges  0x00000000000000a0       0x60 snakeLogic.o
 
 .debug_macro
  *(.debug_macro)
@@ -418,19 +418,19 @@ LOAD data_init
                 0x0000000000000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
 
 .bss.snakeLengthInc
-                0x000000000080012a        0x2
+                0x000000000080013a        0x2
  .bss.snakeLengthInc
-                0x000000000080012a        0x2 main.o
+                0x000000000080013a        0x2 main.o
 
 .bss.timerCounter
-                0x000000000080012c        0x2
+                0x000000000080013c        0x2
  .bss.timerCounter
-                0x000000000080012c        0x2 main.o
+                0x000000000080013c        0x2 main.o
 
 .bss.current_direction
-                0x0000000000800130        0x1
+                0x0000000000800140        0x1
  .bss.current_direction
-                0x0000000000800130        0x1 main.o
+                0x0000000000800140        0x1 main.o
 
 .bss.snake      0x0000000000800100       0x28
  .bss.snake     0x0000000000800100       0x28 snakeLogic.o
@@ -452,178 +452,192 @@ LOAD data_init
  .text.advanceSnake
                 0x00000000000002a0       0xa4 snakeLogic.o
 
+.text.gameOverICON
+                0x0000000000000344       0x6a
+ .text.gameOverICON
+                0x0000000000000344       0x6a main.o
+                0x0000000000000344                gameOverICON
+
+.text.checkSnake
+                0x00000000000003ae       0x66
+ .text.checkSnake
+                0x00000000000003ae       0x66 snakeLogic.o
+
 .text.clearMatrixBoard
-                0x0000000000000344       0x62
+                0x0000000000000414       0x62
  .text.clearMatrixBoard
-                0x0000000000000344       0x62 main.o
-                0x0000000000000344                clearMatrixBoard
+                0x0000000000000414       0x62 main.o
+                0x0000000000000414                clearMatrixBoard
 
-.text.startTWI  0x00000000000003a6       0x52
+.text.startTWI  0x0000000000000476       0x52
  .text.startTWI
-                0x00000000000003a6       0x52 main.o
-                0x00000000000003a6                startTWI
+                0x0000000000000476       0x52 main.o
+                0x0000000000000476                startTWI
 
-.text.main      0x00000000000003f8       0x3c
- .text.main     0x00000000000003f8       0x3c main.o
-                0x00000000000003f8                main
+.text.main      0x00000000000004c8       0x3c
+ .text.main     0x00000000000004c8       0x3c main.o
+                0x00000000000004c8                main
 
 .text.initSnake
-                0x0000000000000434       0x38
+                0x0000000000000504       0x38
  .text.initSnake
-                0x0000000000000434       0x38 snakeLogic.o
-                0x0000000000000434                initSnake
+                0x0000000000000504       0x38 snakeLogic.o
+                0x0000000000000504                initSnake
+
+.text.gameOver  0x000000000000053c       0x30
+ .text.gameOver
+                0x000000000000053c       0x30 snakeLogic.o
+                0x000000000000053c                gameOver
 
 .text.clearSnake
-                0x000000000000046c       0x2e
+                0x000000000000056c       0x2e
  .text.clearSnake
-                0x000000000000046c       0x2e snakeLogic.o
-                0x000000000000046c                clearSnake
+                0x000000000000056c       0x2e snakeLogic.o
+                0x000000000000056c                clearSnake
 
-.text.gameOver  0x000000000000049a       0x2c
- .text.gameOver
-                0x000000000000049a       0x2c snakeLogic.o
-                0x000000000000049a                gameOver
+.text.moveUp    0x000000000000059a       0x2c
+ .text.moveUp   0x000000000000059a       0x2c snakeLogic.o
+                0x000000000000059a                moveUp
 
-.text.sendCommand
-                0x00000000000004c6       0x28
- .text.sendCommand
-                0x00000000000004c6       0x28 main.o
-                0x00000000000004c6                sendCommand
-
-.text.moveUp    0x00000000000004ee       0x28
- .text.moveUp   0x00000000000004ee       0x28 snakeLogic.o
-                0x00000000000004ee                moveUp
-
-.text.moveDown  0x0000000000000516       0x28
+.text.moveDown  0x00000000000005c6       0x2c
  .text.moveDown
-                0x0000000000000516       0x28 snakeLogic.o
-                0x0000000000000516                moveDown
+                0x00000000000005c6       0x2c snakeLogic.o
+                0x00000000000005c6                moveDown
 
-.text.moveLeft  0x000000000000053e       0x28
+.text.moveLeft  0x00000000000005f2       0x2c
  .text.moveLeft
-                0x000000000000053e       0x28 snakeLogic.o
-                0x000000000000053e                moveLeft
+                0x00000000000005f2       0x2c snakeLogic.o
+                0x00000000000005f2                moveLeft
 
 .text.moveRight
-                0x0000000000000566       0x28
+                0x000000000000061e       0x2c
  .text.moveRight
-                0x0000000000000566       0x28 snakeLogic.o
-                0x0000000000000566                moveRight
+                0x000000000000061e       0x2c snakeLogic.o
+                0x000000000000061e                moveRight
 
-.text.wait      0x000000000000058e       0x1e
- .text.wait     0x000000000000058e       0x1e main.o
-                0x000000000000058e                wait
+.text.sendCommand
+                0x000000000000064a       0x28
+ .text.sendCommand
+                0x000000000000064a       0x28 main.o
+                0x000000000000064a                sendCommand
+
+.text.wait      0x0000000000000672       0x1e
+ .text.wait     0x0000000000000672       0x1e main.o
+                0x0000000000000672                wait
 
 .text.__vector_5
-                0x00000000000005ac       0x1e
+                0x0000000000000690       0x1e
  .text.__vector_5
-                0x00000000000005ac       0x1e main.o
-                0x00000000000005ac                __vector_5
+                0x0000000000000690       0x1e main.o
+                0x0000000000000690                __vector_5
 
 .text.__vector_6
-                0x00000000000005ca       0x1e
+                0x00000000000006ae       0x1e
  .text.__vector_6
-                0x00000000000005ca       0x1e main.o
-                0x00000000000005ca                __vector_6
+                0x00000000000006ae       0x1e main.o
+                0x00000000000006ae                __vector_6
 
 .text.__vector_7
-                0x00000000000005e8       0x1e
+                0x00000000000006cc       0x1e
  .text.__vector_7
-                0x00000000000005e8       0x1e main.o
-                0x00000000000005e8                __vector_7
+                0x00000000000006cc       0x1e main.o
+                0x00000000000006cc                __vector_7
 
 .text.__vector_8
-                0x0000000000000606       0x18
+                0x00000000000006ea       0x18
  .text.__vector_8
-                0x0000000000000606       0x18 main.o
-                0x0000000000000606                __vector_8
+                0x00000000000006ea       0x18 main.o
+                0x00000000000006ea                __vector_8
 
-.text.getSnake  0x000000000000061e       0x18
+.text.getSnake  0x0000000000000702       0x18
  .text.getSnake
-                0x000000000000061e       0x18 snakeLogic.o
-                0x000000000000061e                getSnake
+                0x0000000000000702       0x18 snakeLogic.o
+                0x0000000000000702                getSnake
 
-.text.twi_tx    0x0000000000000636       0x14
- .text.twi_tx   0x0000000000000636       0x14 main.o
-                0x0000000000000636                twi_tx
+.text.twi_tx    0x000000000000071a       0x14
+ .text.twi_tx   0x000000000000071a       0x14 main.o
+                0x000000000000071a                twi_tx
 
 .text.twi_start
-                0x000000000000064a       0x10
+                0x000000000000072e       0x10
  .text.twi_start
-                0x000000000000064a       0x10 main.o
-                0x000000000000064a                twi_start
+                0x000000000000072e       0x10 main.o
+                0x000000000000072e                twi_start
 
-.text.twi_init  0x000000000000065a        0xc
+.text.twi_init  0x000000000000073e        0xc
  .text.twi_init
-                0x000000000000065a        0xc main.o
-                0x000000000000065a                twi_init
+                0x000000000000073e        0xc main.o
+                0x000000000000073e                twi_init
 
 .text.setSnakeSpeed
-                0x0000000000000666        0xa
+                0x000000000000074a        0xa
  .text.setSnakeSpeed
-                0x0000000000000666        0xa main.o
-                0x0000000000000666                setSnakeSpeed
+                0x000000000000074a        0xa main.o
+                0x000000000000074a                setSnakeSpeed
 
 .text.setSnakeLenghtInc
-                0x0000000000000670        0xa
+                0x0000000000000754        0xa
  .text.setSnakeLenghtInc
-                0x0000000000000670        0xa main.o
-                0x0000000000000670                setSnakeLenghtInc
+                0x0000000000000754        0xa main.o
+                0x0000000000000754                setSnakeLenghtInc
 
 .text.getSnakeLength
-                0x000000000000067a        0xa
+                0x000000000000075e        0xa
  .text.getSnakeLength
-                0x000000000000067a        0xa snakeLogic.o
-                0x000000000000067a                getSnakeLength
+                0x000000000000075e        0xa snakeLogic.o
+                0x000000000000075e                getSnakeLength
 
-.text.twi_stop  0x0000000000000684        0x8
+.text.twi_stop  0x0000000000000768        0x8
  .text.twi_stop
-                0x0000000000000684        0x8 main.o
-                0x0000000000000684                twi_stop
+                0x0000000000000768        0x8 main.o
+                0x0000000000000768                twi_stop
 
 .text.setDirection
-                0x000000000000068c        0x6
+                0x0000000000000770        0x6
  .text.setDirection
-                0x000000000000068c        0x6 main.o
-                0x000000000000068c                setDirection
+                0x0000000000000770        0x6 main.o
+                0x0000000000000770                setDirection
 
-.text           0x0000000000000692        0x4
- .text          0x0000000000000692        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
-                0x0000000000000692                __vector_22
-                0x0000000000000692                __vector_28
-                0x0000000000000692                __vector_1
-                0x0000000000000692                __vector_32
-                0x0000000000000692                __vector_34
-                0x0000000000000692                __vector_24
-                0x0000000000000692                __vector_12
-                0x0000000000000692                __bad_interrupt
-                0x0000000000000692                __vector_31
-                0x0000000000000692                __vector_3
-                0x0000000000000692                __vector_23
-                0x0000000000000692                __vector_30
-                0x0000000000000692                __vector_25
-                0x0000000000000692                __vector_11
-                0x0000000000000692                __vector_13
-                0x0000000000000692                __vector_17
-                0x0000000000000692                __vector_19
-                0x0000000000000692                __vector_27
-                0x0000000000000692                __vector_33
-                0x0000000000000692                __vector_4
-                0x0000000000000692                __vector_2
-                0x0000000000000692                __vector_21
-                0x0000000000000692                __vector_15
-                0x0000000000000692                __vector_29
-                0x0000000000000692                __vector_26
-                0x0000000000000692                __vector_14
-                0x0000000000000692                __vector_10
-                0x0000000000000692                __vector_16
-                0x0000000000000692                __vector_18
-                0x0000000000000692                __vector_20
+.text           0x0000000000000776        0x4
+ .text          0x0000000000000776        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr51/memx-const/crtatmega128.o
+                0x0000000000000776                __vector_22
+                0x0000000000000776                __vector_28
+                0x0000000000000776                __vector_1
+                0x0000000000000776                __vector_32
+                0x0000000000000776                __vector_34
+                0x0000000000000776                __vector_24
+                0x0000000000000776                __vector_12
+                0x0000000000000776                __bad_interrupt
+                0x0000000000000776                __vector_31
+                0x0000000000000776                __vector_3
+                0x0000000000000776                __vector_23
+                0x0000000000000776                __vector_30
+                0x0000000000000776                __vector_25
+                0x0000000000000776                __vector_11
+                0x0000000000000776                __vector_13
+                0x0000000000000776                __vector_17
+                0x0000000000000776                __vector_19
+                0x0000000000000776                __vector_27
+                0x0000000000000776                __vector_33
+                0x0000000000000776                __vector_4
+                0x0000000000000776                __vector_2
+                0x0000000000000776                __vector_21
+                0x0000000000000776                __vector_15
+                0x0000000000000776                __vector_29
+                0x0000000000000776                __vector_26
+                0x0000000000000776                __vector_14
+                0x0000000000000776                __vector_10
+                0x0000000000000776                __vector_16
+                0x0000000000000776                __vector_18
+                0x0000000000000776                __vector_20
+
+.rodata         0x0000000000800128       0x10 load address 0x000000000000077a
+ .rodata        0x0000000000800128       0x10 main.o
 
 .data.snakeSpeed
-                0x0000000000800128        0x2 load address 0x0000000000000696
+                0x0000000000800138        0x2 load address 0x000000000000078a
  .data.snakeSpeed
-                0x0000000000800128        0x2 main.o
+                0x0000000000800138        0x2 main.o
 
-.data.length    0x000000000080012e        0x2 load address 0x0000000000000698
- .data.length   0x000000000080012e        0x2 snakeLogic.o
+.data.length    0x000000000080013e        0x2 load address 0x000000000000078c
+ .data.length   0x000000000080013e        0x2 snakeLogic.o

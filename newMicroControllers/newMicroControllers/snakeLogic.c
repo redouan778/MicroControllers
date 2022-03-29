@@ -92,6 +92,7 @@ void clearSnake(){
 void gameOver()
 {
 	length = 3;
+	gameOverICON();
 	clearSnake();
 	setSnakeLenghtInc(0);
 	setDirection(n);
@@ -123,7 +124,7 @@ static void advanceSnake(type movementType)
 
 static void checkSnake()
 {
-    for(int i = 1; i < MAX - 1; i++)
+    for(int i = 1; i < length - 1; i++)
     {
         if (snake[i].pos[X] == snake[0].pos[X] && snake[i].pos[Y] == snake[0].pos[Y])
         {

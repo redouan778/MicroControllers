@@ -159,6 +159,16 @@ ISR(TIMER2_COMP_vect){
 		
 }
 
+void gameOverICON(){
+	int cross[8] = {0XC0, 0X21, 0X12, 0X0C, 0X0C, 0X12, 0X21, 0XC0};		
+	for (int i = 0; i < 8; i++)
+	{
+		sendCommand(2 * i, cross[i]);
+	}
+	
+	
+}
+
 ISR(INT4_vect){
 	current_direction = w;
 	//sendCommand(8, 0x80);

@@ -16,6 +16,7 @@ void setDirection(snake_direction);
 void setSnakeSpeed(int speed);
 
 void setSnakeLenghtInc(int snakelengt);
+void gameOverICON();
 
 
 
