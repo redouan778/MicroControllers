@@ -124,6 +124,9 @@
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="setValues.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="snakeLogic.c">
       <SubType>compile</SubType>
     </Compile>

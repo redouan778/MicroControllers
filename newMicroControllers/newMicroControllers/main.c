@@ -2,11 +2,14 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include "snakeLogic.h"
+#include "setValues.h"
 #include <avr/interrupt.h>
 
-typedef enum{n, o, z, w} snake_direction;
-
 static snake_direction current_direction = n;
+
+void setDirection(snake_direction dir){
+	current_direction = dir;
+}
 
 void twi_init(void){
 	TWSR = 0;
@@ -78,23 +81,22 @@ void startTWI(){
 }
 
 void display_snake(){
-	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};	
 	
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < getSnakeLength(); i++) {
 		segment currentSegment = getSnake(i);
 		
 		int x = currentSegment.pos[X];
 		int y = currentSegment.pos[Y];
 
-
 		if (x == 1) {
 			x = 0x80;
 			} else{
-			x = 1<<(x - 1);
+			x = 1<<(x - 2);
 		}
 		
 		toSend[y - 1] |= x;
-	}
+	}	
 	
 	for (int i = 0; i < 8; i++)
 	{
@@ -103,31 +105,90 @@ void display_snake(){
 	
 }
 
+static int timerCounter = 0;
+static int snakeLengthInc = 0;
+static int snakeSpeed = 25;
+
+void setSnakeSpeed(int speed){
+	snakeSpeed = speed;
+}
+
+
+void setSnakeLenghtInc(int snakelengt){
+	snakeLengthInc = snakelengt;
+}
+
+ISR(TIMER2_COMP_vect){
+	timerCounter++;
+	if (timerCounter > snakeSpeed) {
+	
+		type movement = MOVE;
+		if (snakeLengthInc > 4)
+		{
+			if (snakeSpeed > 13)
+			{
+				snakeSpeed -= 2;
+			}
+			
+			movement = ADD;
+			snakeLengthInc = 0;
+		}
+
+		switch(current_direction){
+			case(n):
+				moveUp(movement);		
+			break;
+				
+			case(o):
+			moveRight(movement);		
+			break;
+		
+			case(z):
+			moveDown(movement);		
+			break;
+		
+			case(w):
+			moveLeft(movement);		
+			break;
+		}		
+			
+	
+		snakeLengthInc++;
+		timerCounter = 0;
+	}	
+		
+}
+
 ISR(INT4_vect){
 	current_direction = w;
-	sendCommand(8, 0x80);
+	//sendCommand(8, 0x80);
 }
 
 ISR(INT5_vect){
 	current_direction = z;
-	sendCommand(6, 0x80);
+	//sendCommand(6, 0x80);
 }
 
 ISR(INT6_vect){
 	current_direction = o;
-		sendCommand(4, 0x80);
+	//sendCommand(4, 0x80);
 }
 
 ISR(INT7_vect){
 	current_direction = n;
-	sendCommand(2, 0x80);
+	//sendCommand(2, 0x80);
 }
 
 int main( void ){
 	EICRB = 0b11111111; 
+	OCR2 = 255;
 	EIMSK = 0b11110000; 
+	TIMSK = 0b10000000;
 	
 	sei();
+
+	TCCR2 = 0b00011101;
+
 	DDRE = 0b00000000;
 	
 	twi_init();		// Init TWI interface
@@ -140,7 +201,7 @@ int main( void ){
 
 	while(1){
 		display_snake();
-		wait(10);
+		wait(500);
 	}			
 
 	return 1;

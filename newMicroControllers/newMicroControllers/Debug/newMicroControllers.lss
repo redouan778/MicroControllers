@@ -3,107 +3,139 @@ newMicroControllers.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  0000055c  2**0
+  0 .data         00000000  00800100  00800100  0000078e  2**0
                   ALLOC, LOAD, DATA
-  1 .text         000000f0  00000000  00000000  00000094  2**1
+  1 .text         00000102  00000000  00000000  000000f4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .comment      0000002f  00000000  00000000  0000055c  2**0
+  2 .comment      0000002f  00000000  00000000  0000078e  2**0
                   CONTENTS, READONLY
-  3 .debug_aranges 000000e0  00000000  00000000  0000058b  2**0
+  3 .debug_aranges 00000110  00000000  00000000  000007bd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  4 .debug_info   00001658  00000000  00000000  0000066b  2**0
+  4 .debug_info   000018bf  00000000  00000000  000008cd  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_abbrev 00000a63  00000000  00000000  00001cc3  2**0
+  5 .debug_abbrev 00000ac4  00000000  00000000  0000218c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_line   000006b2  00000000  00000000  00002726  2**0
+  6 .debug_line   00000852  00000000  00000000  00002c50  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_frame  000002d0  00000000  00000000  00002dd8  2**2
+  7 .debug_frame  000002a0  00000000  00000000  000034a4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_str    0000029d  00000000  00000000  000030a8  2**0
+  8 .debug_str    000002f5  00000000  00000000  00003744  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_loc    000006e5  00000000  00000000  00003345  2**0
+  9 .debug_loc    00000662  00000000  00000000  00003a39  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_ranges 000000c0  00000000  00000000  00003a2a  2**0
+ 10 .debug_ranges 000000f0  00000000  00000000  0000409b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .text         00000004  000004c2  000004c2  00000556  2**1
+ 11 .text         00000004  00000692  00000692  00000786  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 12 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00003aec  2**2
+ 12 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000418c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .text.twi_init 0000000c  000004ae  000004ae  00000542  2**1
+ 13 .text.setDirection 00000006  0000068c  0000068c  00000780  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 14 .text.twi_start 00000010  0000049e  0000049e  00000532  2**1
+ 14 .text.twi_init 0000000c  0000065a  0000065a  0000074e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.twi_stop 00000008  000004ba  000004ba  0000054e  2**1
+ 15 .text.twi_start 00000010  0000064a  0000064a  0000073e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.twi_tx  00000014  0000048a  0000048a  0000051e  2**1
+ 16 .text.twi_stop 00000008  00000684  00000684  00000778  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 17 .text.wait    0000001e  00000454  00000454  000004e8  2**1
+ 17 .text.twi_tx  00000014  00000636  00000636  0000072a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .text.sendCommand 00000028  0000042c  0000042c  000004c0  2**1
+ 18 .text.wait    0000001e  0000058e  0000058e  00000682  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 19 .text.clearMatrixBoard 00000062  000001ae  000001ae  00000242  2**1
+ 19 .text.sendCommand 00000028  000004c6  000004c6  000005ba  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 20 .text.startTWI 00000052  00000370  00000370  00000404  2**1
+ 20 .text.clearMatrixBoard 00000062  00000344  00000344  00000438  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 21 .text.display_snake 000000be  000000f0  000000f0  00000184  2**1
+ 21 .text.startTWI 00000052  000003a6  000003a6  0000049a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 22 .text.__vector_5 00000058  00000210  00000210  000002a4  2**1
+ 22 .text.display_snake 000000c2  000001de  000001de  000002d2  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 23 .text.__vector_6 00000058  00000268  00000268  000002fc  2**1
+ 23 .text.setSnakeSpeed 0000000a  00000666  00000666  0000075a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 24 .text.__vector_7 00000058  000002c0  000002c0  00000354  2**1
+ 24 .text.setSnakeLenghtInc 0000000a  00000670  00000670  00000764  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 25 .text.__vector_8 00000058  00000318  00000318  000003ac  2**1
+ 25 .text.__vector_9 000000dc  00000102  00000102  000001f6  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 26 .text.main    00000032  000003fa  000003fa  0000048e  2**1
+ 26 .text.__vector_5 0000001e  000005ac  000005ac  000006a0  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 27 .text.initSnake 00000038  000003c2  000003c2  00000456  2**1
+ 27 .text.__vector_6 0000001e  000005ca  000005ca  000006be  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 28 .text.getSnake 00000018  00000472  00000472  00000506  2**1
+ 28 .text.__vector_7 0000001e  000005e8  000005e8  000006dc  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 29 .data.length  00000002  00800128  000004c6  0000055a  2**0
+ 29 .text.__vector_8 00000018  00000606  00000606  000006fa  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 30 .text.main    0000003c  000003f8  000003f8  000004ec  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 31 .data.snakeSpeed 00000002  00800128  00000696  0000078a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 30 .bss.snake    00000028  00800100  00800100  0000055c  2**0
+ 32 .bss.snakeLengthInc 00000002  0080012a  0080012a  0000078e  2**0
+                  ALLOC
+ 33 .bss.timerCounter 00000002  0080012c  0080012c  0000078e  2**0
+                  ALLOC
+ 34 .bss.current_direction 00000001  00800130  00800130  0000078e  2**0
+                  ALLOC
+ 35 .text.advanceSnake 000000a4  000002a0  000002a0  00000394  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 36 .text.initSnake 00000038  00000434  00000434  00000528  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 37 .text.getSnake 00000018  0000061e  0000061e  00000712  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 38 .text.getSnakeLength 0000000a  0000067a  0000067a  0000076e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 39 .text.clearSnake 0000002e  0000046c  0000046c  00000560  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 40 .text.gameOver 0000002c  0000049a  0000049a  0000058e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 41 .text.moveUp  00000028  000004ee  000004ee  000005e2  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 42 .text.moveDown 00000028  00000516  00000516  0000060a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 43 .text.moveLeft 00000028  0000053e  0000053e  00000632  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 44 .text.moveRight 00000028  00000566  00000566  0000065a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 45 .data.length  00000002  0080012e  00000698  0000078c  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+ 46 .bss.snake    00000028  00800100  00800100  0000078e  2**0
                   ALLOC
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-   0:	0c 94 4c 00 	jmp	0x98	; 0x98 <__ctors_end>
-   4:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-   8:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-   c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  10:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  14:	0c 94 08 01 	jmp	0x210	; 0x210 <__vector_5>
-  18:	0c 94 34 01 	jmp	0x268	; 0x268 <__vector_6>
-  1c:	0c 94 60 01 	jmp	0x2c0	; 0x2c0 <__vector_7>
-  20:	0c 94 8c 01 	jmp	0x318	; 0x318 <__vector_8>
-  24:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  28:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  2c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  30:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  34:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  38:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  3c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  40:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  44:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  48:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  4c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  50:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  54:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  58:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  5c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  60:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  64:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  68:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  6c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  70:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  74:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  78:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  7c:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  80:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  84:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
-  88:	0c 94 61 02 	jmp	0x4c2	; 0x4c2 <__bad_interrupt>
+   0:	0c 94 55 00 	jmp	0xaa	; 0xaa <__ctors_end>
+   4:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+   8:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+   c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  10:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  14:	0c 94 d6 02 	jmp	0x5ac	; 0x5ac <__vector_5>
+  18:	0c 94 e5 02 	jmp	0x5ca	; 0x5ca <__vector_6>
+  1c:	0c 94 f4 02 	jmp	0x5e8	; 0x5e8 <__vector_7>
+  20:	0c 94 03 03 	jmp	0x606	; 0x606 <__vector_8>
+  24:	0c 94 81 00 	jmp	0x102	; 0x102 <_etext>
+  28:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  2c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  30:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  34:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  38:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  3c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  40:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  44:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  48:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  4c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  50:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  54:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  58:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  5c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  60:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  64:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  68:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  6c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  70:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  74:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  78:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  7c:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  80:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  84:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
+  88:	0c 94 49 03 	jmp	0x692	; 0x692 <__bad_interrupt>
 
 0000008c <.dinit>:
   8c:	01 00       	.word	0x0001	; ????
@@ -111,754 +143,1164 @@ Disassembly of section .text:
   90:	80 01       	movw	r16, r0
   92:	28 01       	movw	r4, r16
   94:	2a 00       	.word	0x002a	; ????
-  96:	04 c6       	rjmp	.+3080   	; 0xca0 <__bad_interrupt+0x7de>
+  96:	06 96       	adiw	r24, 0x06	; 6
+  98:	01 2a       	or	r0, r17
+  9a:	01 2e       	mov	r0, r17
+  9c:	80 01       	movw	r16, r0
+  9e:	2e 01       	movw	r4, r28
+  a0:	30 00       	.word	0x0030	; ????
+  a2:	06 98       	cbi	0x00, 6	; 0
+  a4:	01 30       	cpi	r16, 0x01	; 1
+  a6:	01 31       	cpi	r16, 0x11	; 17
+  a8:	80 00       	.word	0x0080	; ????
 
-00000098 <__ctors_end>:
-  98:	11 24       	eor	r1, r1
-  9a:	1f be       	out	0x3f, r1	; 63
-  9c:	cf ef       	ldi	r28, 0xFF	; 255
-  9e:	d0 e1       	ldi	r29, 0x10	; 16
-  a0:	de bf       	out	0x3e, r29	; 62
-  a2:	cd bf       	out	0x3d, r28	; 61
+000000aa <__ctors_end>:
+  aa:	11 24       	eor	r1, r1
+  ac:	1f be       	out	0x3f, r1	; 63
+  ae:	cf ef       	ldi	r28, 0xFF	; 255
+  b0:	d0 e1       	ldi	r29, 0x10	; 16
+  b2:	de bf       	out	0x3e, r29	; 62
+  b4:	cd bf       	out	0x3d, r28	; 61
 
-000000a4 <__do_copy_data>:
-  a4:	ec e8       	ldi	r30, 0x8C	; 140
-  a6:	f0 e0       	ldi	r31, 0x00	; 0
-  a8:	40 e0       	ldi	r20, 0x00	; 0
-  aa:	19 c0       	rjmp	.+50     	; 0xde <__do_clear_bss+0x8>
-  ac:	b7 91       	elpm	r27, Z+
-  ae:	a7 91       	elpm	r26, Z+
-  b0:	37 91       	elpm	r19, Z+
-  b2:	27 91       	elpm	r18, Z+
-  b4:	07 91       	elpm	r16, Z+
-  b6:	07 fd       	sbrc	r16, 7
-  b8:	0e c0       	rjmp	.+28     	; 0xd6 <__do_clear_bss>
-  ba:	97 91       	elpm	r25, Z+
-  bc:	87 91       	elpm	r24, Z+
-  be:	ef 01       	movw	r28, r30
-  c0:	f9 2f       	mov	r31, r25
-  c2:	e8 2f       	mov	r30, r24
-  c4:	0b bf       	out	0x3b, r16	; 59
-  c6:	07 90       	elpm	r0, Z+
-  c8:	0d 92       	st	X+, r0
-  ca:	a2 17       	cp	r26, r18
-  cc:	b3 07       	cpc	r27, r19
-  ce:	d9 f7       	brne	.-10     	; 0xc6 <__do_copy_data+0x22>
-  d0:	fe 01       	movw	r30, r28
-  d2:	1b be       	out	0x3b, r1	; 59
-  d4:	04 c0       	rjmp	.+8      	; 0xde <__do_clear_bss+0x8>
+000000b6 <__do_copy_data>:
+  b6:	ec e8       	ldi	r30, 0x8C	; 140
+  b8:	f0 e0       	ldi	r31, 0x00	; 0
+  ba:	40 e0       	ldi	r20, 0x00	; 0
+  bc:	19 c0       	rjmp	.+50     	; 0xf0 <__do_clear_bss+0x8>
+  be:	b7 91       	elpm	r27, Z+
+  c0:	a7 91       	elpm	r26, Z+
+  c2:	37 91       	elpm	r19, Z+
+  c4:	27 91       	elpm	r18, Z+
+  c6:	07 91       	elpm	r16, Z+
+  c8:	07 fd       	sbrc	r16, 7
+  ca:	0e c0       	rjmp	.+28     	; 0xe8 <__do_clear_bss>
+  cc:	97 91       	elpm	r25, Z+
+  ce:	87 91       	elpm	r24, Z+
+  d0:	ef 01       	movw	r28, r30
+  d2:	f9 2f       	mov	r31, r25
+  d4:	e8 2f       	mov	r30, r24
+  d6:	0b bf       	out	0x3b, r16	; 59
+  d8:	07 90       	elpm	r0, Z+
+  da:	0d 92       	st	X+, r0
+  dc:	a2 17       	cp	r26, r18
+  de:	b3 07       	cpc	r27, r19
+  e0:	d9 f7       	brne	.-10     	; 0xd8 <__do_copy_data+0x22>
+  e2:	fe 01       	movw	r30, r28
+  e4:	1b be       	out	0x3b, r1	; 59
+  e6:	04 c0       	rjmp	.+8      	; 0xf0 <__do_clear_bss+0x8>
 
-000000d6 <__do_clear_bss>:
-  d6:	1d 92       	st	X+, r1
-  d8:	a2 17       	cp	r26, r18
-  da:	b3 07       	cpc	r27, r19
-  dc:	e1 f7       	brne	.-8      	; 0xd6 <__do_clear_bss>
-  de:	e8 39       	cpi	r30, 0x98	; 152
-  e0:	f4 07       	cpc	r31, r20
-  e2:	21 f7       	brne	.-56     	; 0xac <__do_copy_data+0x8>
-  e4:	0e 94 fd 01 	call	0x3fa	; 0x3fa <main>
-  e8:	0c 94 76 00 	jmp	0xec	; 0xec <_exit>
+000000e8 <__do_clear_bss>:
+  e8:	1d 92       	st	X+, r1
+  ea:	a2 17       	cp	r26, r18
+  ec:	b3 07       	cpc	r27, r19
+  ee:	e1 f7       	brne	.-8      	; 0xe8 <__do_clear_bss>
+  f0:	e9 3a       	cpi	r30, 0xA9	; 169
+  f2:	f4 07       	cpc	r31, r20
+  f4:	21 f7       	brne	.-56     	; 0xbe <__do_copy_data+0x8>
+  f6:	0e 94 fc 01 	call	0x3f8	; 0x3f8 <main>
+  fa:	0c 94 7f 00 	jmp	0xfe	; 0xfe <_exit>
 
-000000ec <_exit>:
-  ec:	f8 94       	cli
+000000fe <_exit>:
+  fe:	f8 94       	cli
 
-000000ee <__stop_program>:
-  ee:	ff cf       	rjmp	.-2      	; 0xee <__stop_program>
+00000100 <__stop_program>:
+ 100:	ff cf       	rjmp	.-2      	; 0x100 <__stop_program>
 
 Disassembly of section .text:
 
-000004c2 <__bad_interrupt>:
- 4c2:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+00000692 <__bad_interrupt>:
+ 692:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
 
-Disassembly of section .text.twi_init:
+Disassembly of section .text.setDirection:
 
-000004ae <twi_init>:
-typedef enum{n, o, z, w} snake_direction;
+0000068c <setDirection>:
+#include <avr/interrupt.h>
 
 static snake_direction current_direction = n;
 
+void setDirection(snake_direction dir){
+	current_direction = dir;
+ 68c:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_direction>
+ 690:	08 95       	ret
+
+Disassembly of section .text.twi_init:
+
+0000065a <twi_init>:
+}
+
 void twi_init(void){
 	TWSR = 0;
- 4ae:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <__TEXT_REGION_LENGTH__+0x7e0071>
+ 65a:	10 92 71 00 	sts	0x0071, r1	; 0x800071 <__TEXT_REGION_LENGTH__+0x7e0071>
 	TWBR = 32;	 // TWI clock set to 100kHz, prescaler = 0
- 4b2:	80 e2       	ldi	r24, 0x20	; 32
- 4b4:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <__TEXT_REGION_LENGTH__+0x7e0070>
- 4b8:	08 95       	ret
+ 65e:	80 e2       	ldi	r24, 0x20	; 32
+ 660:	80 93 70 00 	sts	0x0070, r24	; 0x800070 <__TEXT_REGION_LENGTH__+0x7e0070>
+ 664:	08 95       	ret
 
 Disassembly of section .text.twi_start:
 
-0000049e <twi_start>:
+0000064a <twi_start>:
 }
 
 void twi_start(void){
 	TWCR = (0x80 | 0x20 | 0x04);
- 49e:	84 ea       	ldi	r24, 0xA4	; 164
- 4a0:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+ 64a:	84 ea       	ldi	r24, 0xA4	; 164
+ 64c:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
 	while( 0x00 == (TWCR & 0x80) );
- 4a4:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
- 4a8:	88 23       	and	r24, r24
- 4aa:	e4 f7       	brge	.-8      	; 0x4a4 <twi_start+0x6>
+ 650:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+ 654:	88 23       	and	r24, r24
+ 656:	e4 f7       	brge	.-8      	; 0x650 <twi_start+0x6>
 }
- 4ac:	08 95       	ret
+ 658:	08 95       	ret
 
 Disassembly of section .text.twi_stop:
 
-000004ba <twi_stop>:
+00000684 <twi_stop>:
 
 void twi_stop(void){
 	TWCR = (0x80 | 0x10 | 0x04);
- 4ba:	84 e9       	ldi	r24, 0x94	; 148
- 4bc:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
- 4c0:	08 95       	ret
+ 684:	84 e9       	ldi	r24, 0x94	; 148
+ 686:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+ 68a:	08 95       	ret
 
 Disassembly of section .text.twi_tx:
 
-0000048a <twi_tx>:
+00000636 <twi_tx>:
 }
 
 void twi_tx(unsigned char data){
 	TWDR = data;
- 48a:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <__TEXT_REGION_LENGTH__+0x7e0073>
+ 636:	80 93 73 00 	sts	0x0073, r24	; 0x800073 <__TEXT_REGION_LENGTH__+0x7e0073>
 	TWCR = (0x80 | 0x04);
- 48e:	84 e8       	ldi	r24, 0x84	; 132
- 490:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+ 63a:	84 e8       	ldi	r24, 0x84	; 132
+ 63c:	80 93 74 00 	sts	0x0074, r24	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
 	while( 0 == (TWCR & 0x80) );
- 494:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
- 498:	88 23       	and	r24, r24
- 49a:	e4 f7       	brge	.-8      	; 0x494 <twi_tx+0xa>
+ 640:	80 91 74 00 	lds	r24, 0x0074	; 0x800074 <__TEXT_REGION_LENGTH__+0x7e0074>
+ 644:	88 23       	and	r24, r24
+ 646:	e4 f7       	brge	.-8      	; 0x640 <twi_tx+0xa>
 }
- 49c:	08 95       	ret
+ 648:	08 95       	ret
 
 Disassembly of section .text.wait:
 
-00000454 <wait>:
+0000058e <wait>:
 
 void wait( int ms ){
 	for (int i=0; i<ms; i++)
- 454:	20 e0       	ldi	r18, 0x00	; 0
- 456:	30 e0       	ldi	r19, 0x00	; 0
- 458:	08 c0       	rjmp	.+16     	; 0x46a <wait+0x16>
+ 58e:	20 e0       	ldi	r18, 0x00	; 0
+ 590:	30 e0       	ldi	r19, 0x00	; 0
+ 592:	08 c0       	rjmp	.+16     	; 0x5a4 <wait+0x16>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 45a:	ef ec       	ldi	r30, 0xCF	; 207
- 45c:	f7 e0       	ldi	r31, 0x07	; 7
- 45e:	31 97       	sbiw	r30, 0x01	; 1
- 460:	f1 f7       	brne	.-4      	; 0x45e <wait+0xa>
- 462:	00 c0       	rjmp	.+0      	; 0x464 <wait+0x10>
- 464:	00 00       	nop
- 466:	2f 5f       	subi	r18, 0xFF	; 255
- 468:	3f 4f       	sbci	r19, 0xFF	; 255
- 46a:	28 17       	cp	r18, r24
- 46c:	39 07       	cpc	r19, r25
- 46e:	ac f3       	brlt	.-22     	; 0x45a <wait+0x6>
+ 594:	ef ec       	ldi	r30, 0xCF	; 207
+ 596:	f7 e0       	ldi	r31, 0x07	; 7
+ 598:	31 97       	sbiw	r30, 0x01	; 1
+ 59a:	f1 f7       	brne	.-4      	; 0x598 <wait+0xa>
+ 59c:	00 c0       	rjmp	.+0      	; 0x59e <wait+0x10>
+ 59e:	00 00       	nop
+ 5a0:	2f 5f       	subi	r18, 0xFF	; 255
+ 5a2:	3f 4f       	sbci	r19, 0xFF	; 255
+ 5a4:	28 17       	cp	r18, r24
+ 5a6:	39 07       	cpc	r19, r25
+ 5a8:	ac f3       	brlt	.-22     	; 0x594 <wait+0x6>
 	{
 		_delay_ms( 1 );		// library function (max 30 ms at 8MHz)
 	}
 }
- 470:	08 95       	ret
+ 5aa:	08 95       	ret
 
 Disassembly of section .text.sendCommand:
 
-0000042c <sendCommand>:
+000004c6 <sendCommand>:
 
 void sendCommand(int addres, int byte){
- 42c:	cf 93       	push	r28
- 42e:	df 93       	push	r29
- 430:	d8 2f       	mov	r29, r24
- 432:	c6 2f       	mov	r28, r22
+ 4c6:	cf 93       	push	r28
+ 4c8:	df 93       	push	r29
+ 4ca:	d8 2f       	mov	r29, r24
+ 4cc:	c6 2f       	mov	r28, r22
 		twi_start();
- 434:	0e 94 4f 02 	call	0x49e	; 0x49e <twi_start>
+ 4ce:	0e 94 25 03 	call	0x64a	; 0x64a <twi_start>
 		twi_tx(0xE0);		// Display I2C addres + R/W bit
- 438:	80 ee       	ldi	r24, 0xE0	; 224
- 43a:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 4d2:	80 ee       	ldi	r24, 0xE0	; 224
+ 4d4:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 		twi_tx(addres);	    // rij
- 43e:	8d 2f       	mov	r24, r29
- 440:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 4d8:	8d 2f       	mov	r24, r29
+ 4da:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 		twi_tx(byte);		// kolumn
- 444:	8c 2f       	mov	r24, r28
- 446:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 4de:	8c 2f       	mov	r24, r28
+ 4e0:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 		twi_stop();
- 44a:	0e 94 5d 02 	call	0x4ba	; 0x4ba <twi_stop>
+ 4e4:	0e 94 42 03 	call	0x684	; 0x684 <twi_stop>
 }
- 44e:	df 91       	pop	r29
- 450:	cf 91       	pop	r28
- 452:	08 95       	ret
+ 4e8:	df 91       	pop	r29
+ 4ea:	cf 91       	pop	r28
+ 4ec:	08 95       	ret
 
 Disassembly of section .text.clearMatrixBoard:
 
-000001ae <clearMatrixBoard>:
+00000344 <clearMatrixBoard>:
 
 void clearMatrixBoard(){	
 	sendCommand(0x00, 0x00);
- 1ae:	60 e0       	ldi	r22, 0x00	; 0
- 1b0:	70 e0       	ldi	r23, 0x00	; 0
- 1b2:	80 e0       	ldi	r24, 0x00	; 0
- 1b4:	90 e0       	ldi	r25, 0x00	; 0
- 1b6:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 344:	60 e0       	ldi	r22, 0x00	; 0
+ 346:	70 e0       	ldi	r23, 0x00	; 0
+ 348:	80 e0       	ldi	r24, 0x00	; 0
+ 34a:	90 e0       	ldi	r25, 0x00	; 0
+ 34c:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x02, 0x00);
- 1ba:	60 e0       	ldi	r22, 0x00	; 0
- 1bc:	70 e0       	ldi	r23, 0x00	; 0
- 1be:	82 e0       	ldi	r24, 0x02	; 2
- 1c0:	90 e0       	ldi	r25, 0x00	; 0
- 1c2:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 350:	60 e0       	ldi	r22, 0x00	; 0
+ 352:	70 e0       	ldi	r23, 0x00	; 0
+ 354:	82 e0       	ldi	r24, 0x02	; 2
+ 356:	90 e0       	ldi	r25, 0x00	; 0
+ 358:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x04, 0x00);
- 1c6:	60 e0       	ldi	r22, 0x00	; 0
- 1c8:	70 e0       	ldi	r23, 0x00	; 0
- 1ca:	84 e0       	ldi	r24, 0x04	; 4
- 1cc:	90 e0       	ldi	r25, 0x00	; 0
- 1ce:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 35c:	60 e0       	ldi	r22, 0x00	; 0
+ 35e:	70 e0       	ldi	r23, 0x00	; 0
+ 360:	84 e0       	ldi	r24, 0x04	; 4
+ 362:	90 e0       	ldi	r25, 0x00	; 0
+ 364:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x06, 0x00);
- 1d2:	60 e0       	ldi	r22, 0x00	; 0
- 1d4:	70 e0       	ldi	r23, 0x00	; 0
- 1d6:	86 e0       	ldi	r24, 0x06	; 6
- 1d8:	90 e0       	ldi	r25, 0x00	; 0
- 1da:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 368:	60 e0       	ldi	r22, 0x00	; 0
+ 36a:	70 e0       	ldi	r23, 0x00	; 0
+ 36c:	86 e0       	ldi	r24, 0x06	; 6
+ 36e:	90 e0       	ldi	r25, 0x00	; 0
+ 370:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x08, 0x00);
- 1de:	60 e0       	ldi	r22, 0x00	; 0
- 1e0:	70 e0       	ldi	r23, 0x00	; 0
- 1e2:	88 e0       	ldi	r24, 0x08	; 8
- 1e4:	90 e0       	ldi	r25, 0x00	; 0
- 1e6:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 374:	60 e0       	ldi	r22, 0x00	; 0
+ 376:	70 e0       	ldi	r23, 0x00	; 0
+ 378:	88 e0       	ldi	r24, 0x08	; 8
+ 37a:	90 e0       	ldi	r25, 0x00	; 0
+ 37c:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x0A, 0x00);
- 1ea:	60 e0       	ldi	r22, 0x00	; 0
- 1ec:	70 e0       	ldi	r23, 0x00	; 0
- 1ee:	8a e0       	ldi	r24, 0x0A	; 10
- 1f0:	90 e0       	ldi	r25, 0x00	; 0
- 1f2:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 380:	60 e0       	ldi	r22, 0x00	; 0
+ 382:	70 e0       	ldi	r23, 0x00	; 0
+ 384:	8a e0       	ldi	r24, 0x0A	; 10
+ 386:	90 e0       	ldi	r25, 0x00	; 0
+ 388:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x0C, 0x00);
- 1f6:	60 e0       	ldi	r22, 0x00	; 0
- 1f8:	70 e0       	ldi	r23, 0x00	; 0
- 1fa:	8c e0       	ldi	r24, 0x0C	; 12
- 1fc:	90 e0       	ldi	r25, 0x00	; 0
- 1fe:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 38c:	60 e0       	ldi	r22, 0x00	; 0
+ 38e:	70 e0       	ldi	r23, 0x00	; 0
+ 390:	8c e0       	ldi	r24, 0x0C	; 12
+ 392:	90 e0       	ldi	r25, 0x00	; 0
+ 394:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 	sendCommand(0x0E, 0x00);	
- 202:	60 e0       	ldi	r22, 0x00	; 0
- 204:	70 e0       	ldi	r23, 0x00	; 0
- 206:	8e e0       	ldi	r24, 0x0E	; 14
- 208:	90 e0       	ldi	r25, 0x00	; 0
- 20a:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
- 20e:	08 95       	ret
+ 398:	60 e0       	ldi	r22, 0x00	; 0
+ 39a:	70 e0       	ldi	r23, 0x00	; 0
+ 39c:	8e e0       	ldi	r24, 0x0E	; 14
+ 39e:	90 e0       	ldi	r25, 0x00	; 0
+ 3a0:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
+ 3a4:	08 95       	ret
 
 Disassembly of section .text.startTWI:
 
-00000370 <startTWI>:
+000003a6 <startTWI>:
 }
 
 void startTWI(){
 	
 	twi_start();
- 370:	0e 94 4f 02 	call	0x49e	; 0x49e <twi_start>
+ 3a6:	0e 94 25 03 	call	0x64a	; 0x64a <twi_start>
 	twi_tx(0xE0);	// Display I2C addres + R/W bit
- 374:	80 ee       	ldi	r24, 0xE0	; 224
- 376:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3aa:	80 ee       	ldi	r24, 0xE0	; 224
+ 3ac:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_tx(0x21);	// Internal osc on (page 10 HT16K33)
- 37a:	81 e2       	ldi	r24, 0x21	; 33
- 37c:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3b0:	81 e2       	ldi	r24, 0x21	; 33
+ 3b2:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_stop();
- 380:	0e 94 5d 02 	call	0x4ba	; 0x4ba <twi_stop>
+ 3b6:	0e 94 42 03 	call	0x684	; 0x684 <twi_stop>
 
 	twi_start();
- 384:	0e 94 4f 02 	call	0x49e	; 0x49e <twi_start>
+ 3ba:	0e 94 25 03 	call	0x64a	; 0x64a <twi_start>
 	twi_tx(0xE0);	// Display I2C address + R/W bit
- 388:	80 ee       	ldi	r24, 0xE0	; 224
- 38a:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3be:	80 ee       	ldi	r24, 0xE0	; 224
+ 3c0:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_tx(0xA0);	// HT16K33 pins all output
- 38e:	80 ea       	ldi	r24, 0xA0	; 160
- 390:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3c4:	80 ea       	ldi	r24, 0xA0	; 160
+ 3c6:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_stop();
- 394:	0e 94 5d 02 	call	0x4ba	; 0x4ba <twi_stop>
+ 3ca:	0e 94 42 03 	call	0x684	; 0x684 <twi_stop>
 
 	twi_start();
- 398:	0e 94 4f 02 	call	0x49e	; 0x49e <twi_start>
+ 3ce:	0e 94 25 03 	call	0x64a	; 0x64a <twi_start>
 	twi_tx(0xE0);	// Display I2C address + R/W bit
- 39c:	80 ee       	ldi	r24, 0xE0	; 224
- 39e:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3d2:	80 ee       	ldi	r24, 0xE0	; 224
+ 3d4:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_tx(0xE3);	// Display Dimming 4/16 duty cycle
- 3a2:	83 ee       	ldi	r24, 0xE3	; 227
- 3a4:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3d8:	83 ee       	ldi	r24, 0xE3	; 227
+ 3da:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_stop();
- 3a8:	0e 94 5d 02 	call	0x4ba	; 0x4ba <twi_stop>
+ 3de:	0e 94 42 03 	call	0x684	; 0x684 <twi_stop>
 
 	twi_start();
- 3ac:	0e 94 4f 02 	call	0x49e	; 0x49e <twi_start>
+ 3e2:	0e 94 25 03 	call	0x64a	; 0x64a <twi_start>
 	twi_tx(0xE0);	// Display I2C address + R/W bit
- 3b0:	80 ee       	ldi	r24, 0xE0	; 224
- 3b2:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3e6:	80 ee       	ldi	r24, 0xE0	; 224
+ 3e8:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_tx(0x81);	// Display OFF - Blink On
- 3b6:	81 e8       	ldi	r24, 0x81	; 129
- 3b8:	0e 94 45 02 	call	0x48a	; 0x48a <twi_tx>
+ 3ec:	81 e8       	ldi	r24, 0x81	; 129
+ 3ee:	0e 94 1b 03 	call	0x636	; 0x636 <twi_tx>
 	twi_stop();
- 3bc:	0e 94 5d 02 	call	0x4ba	; 0x4ba <twi_stop>
- 3c0:	08 95       	ret
+ 3f2:	0e 94 42 03 	call	0x684	; 0x684 <twi_stop>
+ 3f6:	08 95       	ret
 
 Disassembly of section .text.display_snake:
 
-000000f0 <display_snake>:
+000001de <display_snake>:
 }
 
 void display_snake(){
-  f0:	0f 93       	push	r16
-  f2:	1f 93       	push	r17
-  f4:	cf 93       	push	r28
-  f6:	df 93       	push	r29
-  f8:	cd b7       	in	r28, 0x3d	; 61
-  fa:	de b7       	in	r29, 0x3e	; 62
-  fc:	60 97       	sbiw	r28, 0x10	; 16
-  fe:	0f b6       	in	r0, 0x3f	; 63
- 100:	f8 94       	cli
- 102:	de bf       	out	0x3e, r29	; 62
- 104:	0f be       	out	0x3f, r0	; 63
- 106:	cd bf       	out	0x3d, r28	; 61
-	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
- 108:	fe 01       	movw	r30, r28
- 10a:	31 96       	adiw	r30, 0x01	; 1
- 10c:	80 e1       	ldi	r24, 0x10	; 16
- 10e:	df 01       	movw	r26, r30
- 110:	1d 92       	st	X+, r1
- 112:	8a 95       	dec	r24
- 114:	e9 f7       	brne	.-6      	; 0x110 <display_snake+0x20>
+ 1de:	0f 93       	push	r16
+ 1e0:	1f 93       	push	r17
+ 1e2:	cf 93       	push	r28
+ 1e4:	df 93       	push	r29
+ 1e6:	cd b7       	in	r28, 0x3d	; 61
+ 1e8:	de b7       	in	r29, 0x3e	; 62
+ 1ea:	60 97       	sbiw	r28, 0x10	; 16
+ 1ec:	0f b6       	in	r0, 0x3f	; 63
+ 1ee:	f8 94       	cli
+ 1f0:	de bf       	out	0x3e, r29	; 62
+ 1f2:	0f be       	out	0x3f, r0	; 63
+ 1f4:	cd bf       	out	0x3d, r28	; 61
+	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};	
+ 1f6:	fe 01       	movw	r30, r28
+ 1f8:	31 96       	adiw	r30, 0x01	; 1
+ 1fa:	80 e1       	ldi	r24, 0x10	; 16
+ 1fc:	df 01       	movw	r26, r30
+ 1fe:	1d 92       	st	X+, r1
+ 200:	8a 95       	dec	r24
+ 202:	e9 f7       	brne	.-6      	; 0x1fe <display_snake+0x20>
 	
-	for (int i = 0; i < 10; i++) {
- 116:	00 e0       	ldi	r16, 0x00	; 0
- 118:	10 e0       	ldi	r17, 0x00	; 0
- 11a:	26 c0       	rjmp	.+76     	; 0x168 <display_snake+0x78>
+	for (int i = 0; i < getSnakeLength(); i++) {
+ 204:	00 e0       	ldi	r16, 0x00	; 0
+ 206:	10 e0       	ldi	r17, 0x00	; 0
+ 208:	26 c0       	rjmp	.+76     	; 0x256 <display_snake+0x78>
 		segment currentSegment = getSnake(i);
- 11c:	c8 01       	movw	r24, r16
- 11e:	0e 94 39 02 	call	0x472	; 0x472 <getSnake>
+ 20a:	c8 01       	movw	r24, r16
+ 20c:	0e 94 0f 03 	call	0x61e	; 0x61e <getSnake>
 		
 		int x = currentSegment.pos[X];
 		int y = currentSegment.pos[Y];
 
-
 		if (x == 1) {
- 122:	61 30       	cpi	r22, 0x01	; 1
- 124:	71 05       	cpc	r23, r1
- 126:	59 f0       	breq	.+22     	; 0x13e <display_snake+0x4e>
+ 210:	61 30       	cpi	r22, 0x01	; 1
+ 212:	71 05       	cpc	r23, r1
+ 214:	59 f0       	breq	.+22     	; 0x22c <display_snake+0x4e>
 			x = 0x80;
 			} else{
-			x = 1<<(x - 1);
- 128:	9b 01       	movw	r18, r22
- 12a:	21 50       	subi	r18, 0x01	; 1
- 12c:	31 09       	sbc	r19, r1
- 12e:	41 e0       	ldi	r20, 0x01	; 1
- 130:	50 e0       	ldi	r21, 0x00	; 0
- 132:	02 c0       	rjmp	.+4      	; 0x138 <display_snake+0x48>
- 134:	44 0f       	add	r20, r20
- 136:	55 1f       	adc	r21, r21
- 138:	2a 95       	dec	r18
- 13a:	e2 f7       	brpl	.-8      	; 0x134 <display_snake+0x44>
- 13c:	02 c0       	rjmp	.+4      	; 0x142 <display_snake+0x52>
+			x = 1<<(x - 2);
+ 216:	9b 01       	movw	r18, r22
+ 218:	22 50       	subi	r18, 0x02	; 2
+ 21a:	31 09       	sbc	r19, r1
+ 21c:	41 e0       	ldi	r20, 0x01	; 1
+ 21e:	50 e0       	ldi	r21, 0x00	; 0
+ 220:	02 c0       	rjmp	.+4      	; 0x226 <display_snake+0x48>
+ 222:	44 0f       	add	r20, r20
+ 224:	55 1f       	adc	r21, r21
+ 226:	2a 95       	dec	r18
+ 228:	e2 f7       	brpl	.-8      	; 0x222 <display_snake+0x44>
+ 22a:	02 c0       	rjmp	.+4      	; 0x230 <display_snake+0x52>
+		
 		int x = currentSegment.pos[X];
 		int y = currentSegment.pos[Y];
 
-
 		if (x == 1) {
 			x = 0x80;
- 13e:	40 e8       	ldi	r20, 0x80	; 128
- 140:	50 e0       	ldi	r21, 0x00	; 0
+ 22c:	40 e8       	ldi	r20, 0x80	; 128
+ 22e:	50 e0       	ldi	r21, 0x00	; 0
 			} else{
-			x = 1<<(x - 1);
+			x = 1<<(x - 2);
 		}
 		
 		toSend[y - 1] |= x;
- 142:	fc 01       	movw	r30, r24
- 144:	31 97       	sbiw	r30, 0x01	; 1
- 146:	ee 0f       	add	r30, r30
- 148:	ff 1f       	adc	r31, r31
- 14a:	81 e0       	ldi	r24, 0x01	; 1
- 14c:	90 e0       	ldi	r25, 0x00	; 0
- 14e:	8c 0f       	add	r24, r28
- 150:	9d 1f       	adc	r25, r29
- 152:	e8 0f       	add	r30, r24
- 154:	f9 1f       	adc	r31, r25
- 156:	20 81       	ld	r18, Z
- 158:	31 81       	ldd	r19, Z+1	; 0x01
- 15a:	c9 01       	movw	r24, r18
- 15c:	84 2b       	or	r24, r20
- 15e:	95 2b       	or	r25, r21
- 160:	91 83       	std	Z+1, r25	; 0x01
- 162:	80 83       	st	Z, r24
+ 230:	fc 01       	movw	r30, r24
+ 232:	31 97       	sbiw	r30, 0x01	; 1
+ 234:	ee 0f       	add	r30, r30
+ 236:	ff 1f       	adc	r31, r31
+ 238:	81 e0       	ldi	r24, 0x01	; 1
+ 23a:	90 e0       	ldi	r25, 0x00	; 0
+ 23c:	8c 0f       	add	r24, r28
+ 23e:	9d 1f       	adc	r25, r29
+ 240:	e8 0f       	add	r30, r24
+ 242:	f9 1f       	adc	r31, r25
+ 244:	20 81       	ld	r18, Z
+ 246:	31 81       	ldd	r19, Z+1	; 0x01
+ 248:	c9 01       	movw	r24, r18
+ 24a:	84 2b       	or	r24, r20
+ 24c:	95 2b       	or	r25, r21
+ 24e:	91 83       	std	Z+1, r25	; 0x01
+ 250:	80 83       	st	Z, r24
 }
 
 void display_snake(){
-	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};
+	int toSend[8] = {0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00, 0X00};	
 	
-	for (int i = 0; i < 10; i++) {
- 164:	0f 5f       	subi	r16, 0xFF	; 255
- 166:	1f 4f       	sbci	r17, 0xFF	; 255
- 168:	0a 30       	cpi	r16, 0x0A	; 10
- 16a:	11 05       	cpc	r17, r1
- 16c:	bc f2       	brlt	.-82     	; 0x11c <display_snake+0x2c>
- 16e:	00 e0       	ldi	r16, 0x00	; 0
- 170:	10 e0       	ldi	r17, 0x00	; 0
- 172:	0f c0       	rjmp	.+30     	; 0x192 <display_snake+0xa2>
+	for (int i = 0; i < getSnakeLength(); i++) {
+ 252:	0f 5f       	subi	r16, 0xFF	; 255
+ 254:	1f 4f       	sbci	r17, 0xFF	; 255
+ 256:	0e 94 3d 03 	call	0x67a	; 0x67a <getSnakeLength>
+ 25a:	08 17       	cp	r16, r24
+ 25c:	19 07       	cpc	r17, r25
+ 25e:	ac f2       	brlt	.-86     	; 0x20a <display_snake+0x2c>
+ 260:	00 e0       	ldi	r16, 0x00	; 0
+ 262:	10 e0       	ldi	r17, 0x00	; 0
+ 264:	0f c0       	rjmp	.+30     	; 0x284 <display_snake+0xa6>
 		toSend[y - 1] |= x;
-	}
+	}	
 	
 	for (int i = 0; i < 8; i++)
 	{
 		sendCommand(2 * i, toSend[i]);
- 174:	c8 01       	movw	r24, r16
- 176:	88 0f       	add	r24, r24
- 178:	99 1f       	adc	r25, r25
- 17a:	e1 e0       	ldi	r30, 0x01	; 1
- 17c:	f0 e0       	ldi	r31, 0x00	; 0
- 17e:	ec 0f       	add	r30, r28
- 180:	fd 1f       	adc	r31, r29
- 182:	e8 0f       	add	r30, r24
- 184:	f9 1f       	adc	r31, r25
- 186:	60 81       	ld	r22, Z
- 188:	71 81       	ldd	r23, Z+1	; 0x01
- 18a:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 266:	c8 01       	movw	r24, r16
+ 268:	88 0f       	add	r24, r24
+ 26a:	99 1f       	adc	r25, r25
+ 26c:	e1 e0       	ldi	r30, 0x01	; 1
+ 26e:	f0 e0       	ldi	r31, 0x00	; 0
+ 270:	ec 0f       	add	r30, r28
+ 272:	fd 1f       	adc	r31, r29
+ 274:	e8 0f       	add	r30, r24
+ 276:	f9 1f       	adc	r31, r25
+ 278:	60 81       	ld	r22, Z
+ 27a:	71 81       	ldd	r23, Z+1	; 0x01
+ 27c:	0e 94 63 02 	call	0x4c6	; 0x4c6 <sendCommand>
 		}
 		
 		toSend[y - 1] |= x;
-	}
+	}	
 	
 	for (int i = 0; i < 8; i++)
- 18e:	0f 5f       	subi	r16, 0xFF	; 255
- 190:	1f 4f       	sbci	r17, 0xFF	; 255
- 192:	08 30       	cpi	r16, 0x08	; 8
- 194:	11 05       	cpc	r17, r1
- 196:	74 f3       	brlt	.-36     	; 0x174 <display_snake+0x84>
+ 280:	0f 5f       	subi	r16, 0xFF	; 255
+ 282:	1f 4f       	sbci	r17, 0xFF	; 255
+ 284:	08 30       	cpi	r16, 0x08	; 8
+ 286:	11 05       	cpc	r17, r1
+ 288:	74 f3       	brlt	.-36     	; 0x266 <display_snake+0x88>
 	{
 		sendCommand(2 * i, toSend[i]);
 	}
 	
 }
- 198:	60 96       	adiw	r28, 0x10	; 16
- 19a:	0f b6       	in	r0, 0x3f	; 63
- 19c:	f8 94       	cli
- 19e:	de bf       	out	0x3e, r29	; 62
- 1a0:	0f be       	out	0x3f, r0	; 63
- 1a2:	cd bf       	out	0x3d, r28	; 61
- 1a4:	df 91       	pop	r29
- 1a6:	cf 91       	pop	r28
- 1a8:	1f 91       	pop	r17
- 1aa:	0f 91       	pop	r16
- 1ac:	08 95       	ret
+ 28a:	60 96       	adiw	r28, 0x10	; 16
+ 28c:	0f b6       	in	r0, 0x3f	; 63
+ 28e:	f8 94       	cli
+ 290:	de bf       	out	0x3e, r29	; 62
+ 292:	0f be       	out	0x3f, r0	; 63
+ 294:	cd bf       	out	0x3d, r28	; 61
+ 296:	df 91       	pop	r29
+ 298:	cf 91       	pop	r28
+ 29a:	1f 91       	pop	r17
+ 29c:	0f 91       	pop	r16
+ 29e:	08 95       	ret
+
+Disassembly of section .text.setSnakeSpeed:
+
+00000666 <setSnakeSpeed>:
+static int timerCounter = 0;
+static int snakeLengthInc = 0;
+static int snakeSpeed = 25;
+
+void setSnakeSpeed(int speed){
+	snakeSpeed = speed;
+ 666:	90 93 29 01 	sts	0x0129, r25	; 0x800129 <snakeSpeed+0x1>
+ 66a:	80 93 28 01 	sts	0x0128, r24	; 0x800128 <snakeSpeed>
+ 66e:	08 95       	ret
+
+Disassembly of section .text.setSnakeLenghtInc:
+
+00000670 <setSnakeLenghtInc>:
+}
+
+
+void setSnakeLenghtInc(int snakelengt){
+	snakeLengthInc = snakelengt;
+ 670:	90 93 2b 01 	sts	0x012B, r25	; 0x80012b <snakeLengthInc+0x1>
+ 674:	80 93 2a 01 	sts	0x012A, r24	; 0x80012a <snakeLengthInc>
+ 678:	08 95       	ret
+
+Disassembly of section .text.__vector_9:
+
+00000102 <__vector_9>:
+}
+
+ISR(TIMER2_COMP_vect){
+ 102:	1f 92       	push	r1
+ 104:	0f 92       	push	r0
+ 106:	0f b6       	in	r0, 0x3f	; 63
+ 108:	0f 92       	push	r0
+ 10a:	11 24       	eor	r1, r1
+ 10c:	0b b6       	in	r0, 0x3b	; 59
+ 10e:	0f 92       	push	r0
+ 110:	2f 93       	push	r18
+ 112:	3f 93       	push	r19
+ 114:	4f 93       	push	r20
+ 116:	5f 93       	push	r21
+ 118:	6f 93       	push	r22
+ 11a:	7f 93       	push	r23
+ 11c:	8f 93       	push	r24
+ 11e:	9f 93       	push	r25
+ 120:	af 93       	push	r26
+ 122:	bf 93       	push	r27
+ 124:	ef 93       	push	r30
+ 126:	ff 93       	push	r31
+	timerCounter++;
+ 128:	80 91 2c 01 	lds	r24, 0x012C	; 0x80012c <timerCounter>
+ 12c:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <timerCounter+0x1>
+ 130:	01 96       	adiw	r24, 0x01	; 1
+ 132:	90 93 2d 01 	sts	0x012D, r25	; 0x80012d <timerCounter+0x1>
+ 136:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <timerCounter>
+	if (timerCounter > snakeSpeed) {
+ 13a:	20 91 28 01 	lds	r18, 0x0128	; 0x800128 <snakeSpeed>
+ 13e:	30 91 29 01 	lds	r19, 0x0129	; 0x800129 <snakeSpeed+0x1>
+ 142:	28 17       	cp	r18, r24
+ 144:	39 07       	cpc	r19, r25
+ 146:	c4 f5       	brge	.+112    	; 0x1b8 <__vector_9+0xb6>
+	
+		type movement = MOVE;
+		if (snakeLengthInc > 4)
+ 148:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <snakeLengthInc>
+ 14c:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <snakeLengthInc+0x1>
+ 150:	05 97       	sbiw	r24, 0x05	; 5
+ 152:	7c f0       	brlt	.+30     	; 0x172 <__vector_9+0x70>
+		{
+			if (snakeSpeed > 13)
+ 154:	2e 30       	cpi	r18, 0x0E	; 14
+ 156:	31 05       	cpc	r19, r1
+ 158:	34 f0       	brlt	.+12     	; 0x166 <__vector_9+0x64>
+			{
+				snakeSpeed -= 2;
+ 15a:	22 50       	subi	r18, 0x02	; 2
+ 15c:	31 09       	sbc	r19, r1
+ 15e:	30 93 29 01 	sts	0x0129, r19	; 0x800129 <snakeSpeed+0x1>
+ 162:	20 93 28 01 	sts	0x0128, r18	; 0x800128 <snakeSpeed>
+			}
+			
+			movement = ADD;
+			snakeLengthInc = 0;
+ 166:	10 92 2b 01 	sts	0x012B, r1	; 0x80012b <snakeLengthInc+0x1>
+ 16a:	10 92 2a 01 	sts	0x012A, r1	; 0x80012a <snakeLengthInc>
+			if (snakeSpeed > 13)
+			{
+				snakeSpeed -= 2;
+			}
+			
+			movement = ADD;
+ 16e:	81 e0       	ldi	r24, 0x01	; 1
+ 170:	01 c0       	rjmp	.+2      	; 0x174 <__vector_9+0x72>
+
+ISR(TIMER2_COMP_vect){
+	timerCounter++;
+	if (timerCounter > snakeSpeed) {
+	
+		type movement = MOVE;
+ 172:	80 e0       	ldi	r24, 0x00	; 0
+			
+			movement = ADD;
+			snakeLengthInc = 0;
+		}
+
+		switch(current_direction){
+ 174:	90 91 30 01 	lds	r25, 0x0130	; 0x800130 <current_direction>
+ 178:	91 30       	cpi	r25, 0x01	; 1
+ 17a:	49 f0       	breq	.+18     	; 0x18e <__vector_9+0x8c>
+ 17c:	28 f0       	brcs	.+10     	; 0x188 <__vector_9+0x86>
+ 17e:	92 30       	cpi	r25, 0x02	; 2
+ 180:	49 f0       	breq	.+18     	; 0x194 <__vector_9+0x92>
+ 182:	93 30       	cpi	r25, 0x03	; 3
+ 184:	51 f0       	breq	.+20     	; 0x19a <__vector_9+0x98>
+ 186:	0b c0       	rjmp	.+22     	; 0x19e <__vector_9+0x9c>
+			case(n):
+				moveUp(movement);		
+ 188:	0e 94 77 02 	call	0x4ee	; 0x4ee <moveUp>
+			break;
+ 18c:	08 c0       	rjmp	.+16     	; 0x19e <__vector_9+0x9c>
+				
+			case(o):
+			moveRight(movement);		
+ 18e:	0e 94 b3 02 	call	0x566	; 0x566 <moveRight>
+			break;
+ 192:	05 c0       	rjmp	.+10     	; 0x19e <__vector_9+0x9c>
+		
+			case(z):
+			moveDown(movement);		
+ 194:	0e 94 8b 02 	call	0x516	; 0x516 <moveDown>
+			break;
+ 198:	02 c0       	rjmp	.+4      	; 0x19e <__vector_9+0x9c>
+		
+			case(w):
+			moveLeft(movement);		
+ 19a:	0e 94 9f 02 	call	0x53e	; 0x53e <moveLeft>
+			break;
+		}		
+			
+	
+		snakeLengthInc++;
+ 19e:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <snakeLengthInc>
+ 1a2:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <snakeLengthInc+0x1>
+ 1a6:	01 96       	adiw	r24, 0x01	; 1
+ 1a8:	90 93 2b 01 	sts	0x012B, r25	; 0x80012b <snakeLengthInc+0x1>
+ 1ac:	80 93 2a 01 	sts	0x012A, r24	; 0x80012a <snakeLengthInc>
+		timerCounter = 0;
+ 1b0:	10 92 2d 01 	sts	0x012D, r1	; 0x80012d <timerCounter+0x1>
+ 1b4:	10 92 2c 01 	sts	0x012C, r1	; 0x80012c <timerCounter>
+	}	
+		
+}
+ 1b8:	ff 91       	pop	r31
+ 1ba:	ef 91       	pop	r30
+ 1bc:	bf 91       	pop	r27
+ 1be:	af 91       	pop	r26
+ 1c0:	9f 91       	pop	r25
+ 1c2:	8f 91       	pop	r24
+ 1c4:	7f 91       	pop	r23
+ 1c6:	6f 91       	pop	r22
+ 1c8:	5f 91       	pop	r21
+ 1ca:	4f 91       	pop	r20
+ 1cc:	3f 91       	pop	r19
+ 1ce:	2f 91       	pop	r18
+ 1d0:	0f 90       	pop	r0
+ 1d2:	0b be       	out	0x3b, r0	; 59
+ 1d4:	0f 90       	pop	r0
+ 1d6:	0f be       	out	0x3f, r0	; 63
+ 1d8:	0f 90       	pop	r0
+ 1da:	1f 90       	pop	r1
+ 1dc:	18 95       	reti
 
 Disassembly of section .text.__vector_5:
 
-00000210 <__vector_5>:
+000005ac <__vector_5>:
 
 ISR(INT4_vect){
- 210:	1f 92       	push	r1
- 212:	0f 92       	push	r0
- 214:	0f b6       	in	r0, 0x3f	; 63
- 216:	0f 92       	push	r0
- 218:	11 24       	eor	r1, r1
- 21a:	0b b6       	in	r0, 0x3b	; 59
- 21c:	0f 92       	push	r0
- 21e:	2f 93       	push	r18
- 220:	3f 93       	push	r19
- 222:	4f 93       	push	r20
- 224:	5f 93       	push	r21
- 226:	6f 93       	push	r22
- 228:	7f 93       	push	r23
- 22a:	8f 93       	push	r24
- 22c:	9f 93       	push	r25
- 22e:	af 93       	push	r26
- 230:	bf 93       	push	r27
- 232:	ef 93       	push	r30
- 234:	ff 93       	push	r31
+ 5ac:	1f 92       	push	r1
+ 5ae:	0f 92       	push	r0
+ 5b0:	0f b6       	in	r0, 0x3f	; 63
+ 5b2:	0f 92       	push	r0
+ 5b4:	11 24       	eor	r1, r1
+ 5b6:	8f 93       	push	r24
 	current_direction = w;
-	sendCommand(8, 0x80);
- 236:	60 e8       	ldi	r22, 0x80	; 128
- 238:	70 e0       	ldi	r23, 0x00	; 0
- 23a:	88 e0       	ldi	r24, 0x08	; 8
- 23c:	90 e0       	ldi	r25, 0x00	; 0
- 23e:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 5b8:	83 e0       	ldi	r24, 0x03	; 3
+ 5ba:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_direction>
+	//sendCommand(8, 0x80);
 }
- 242:	ff 91       	pop	r31
- 244:	ef 91       	pop	r30
- 246:	bf 91       	pop	r27
- 248:	af 91       	pop	r26
- 24a:	9f 91       	pop	r25
- 24c:	8f 91       	pop	r24
- 24e:	7f 91       	pop	r23
- 250:	6f 91       	pop	r22
- 252:	5f 91       	pop	r21
- 254:	4f 91       	pop	r20
- 256:	3f 91       	pop	r19
- 258:	2f 91       	pop	r18
- 25a:	0f 90       	pop	r0
- 25c:	0b be       	out	0x3b, r0	; 59
- 25e:	0f 90       	pop	r0
- 260:	0f be       	out	0x3f, r0	; 63
- 262:	0f 90       	pop	r0
- 264:	1f 90       	pop	r1
- 266:	18 95       	reti
+ 5be:	8f 91       	pop	r24
+ 5c0:	0f 90       	pop	r0
+ 5c2:	0f be       	out	0x3f, r0	; 63
+ 5c4:	0f 90       	pop	r0
+ 5c6:	1f 90       	pop	r1
+ 5c8:	18 95       	reti
 
 Disassembly of section .text.__vector_6:
 
-00000268 <__vector_6>:
+000005ca <__vector_6>:
 
 ISR(INT5_vect){
- 268:	1f 92       	push	r1
- 26a:	0f 92       	push	r0
- 26c:	0f b6       	in	r0, 0x3f	; 63
- 26e:	0f 92       	push	r0
- 270:	11 24       	eor	r1, r1
- 272:	0b b6       	in	r0, 0x3b	; 59
- 274:	0f 92       	push	r0
- 276:	2f 93       	push	r18
- 278:	3f 93       	push	r19
- 27a:	4f 93       	push	r20
- 27c:	5f 93       	push	r21
- 27e:	6f 93       	push	r22
- 280:	7f 93       	push	r23
- 282:	8f 93       	push	r24
- 284:	9f 93       	push	r25
- 286:	af 93       	push	r26
- 288:	bf 93       	push	r27
- 28a:	ef 93       	push	r30
- 28c:	ff 93       	push	r31
+ 5ca:	1f 92       	push	r1
+ 5cc:	0f 92       	push	r0
+ 5ce:	0f b6       	in	r0, 0x3f	; 63
+ 5d0:	0f 92       	push	r0
+ 5d2:	11 24       	eor	r1, r1
+ 5d4:	8f 93       	push	r24
 	current_direction = z;
-	sendCommand(6, 0x80);
- 28e:	60 e8       	ldi	r22, 0x80	; 128
- 290:	70 e0       	ldi	r23, 0x00	; 0
- 292:	86 e0       	ldi	r24, 0x06	; 6
- 294:	90 e0       	ldi	r25, 0x00	; 0
- 296:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 5d6:	82 e0       	ldi	r24, 0x02	; 2
+ 5d8:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_direction>
+	//sendCommand(6, 0x80);
 }
- 29a:	ff 91       	pop	r31
- 29c:	ef 91       	pop	r30
- 29e:	bf 91       	pop	r27
- 2a0:	af 91       	pop	r26
- 2a2:	9f 91       	pop	r25
- 2a4:	8f 91       	pop	r24
- 2a6:	7f 91       	pop	r23
- 2a8:	6f 91       	pop	r22
- 2aa:	5f 91       	pop	r21
- 2ac:	4f 91       	pop	r20
- 2ae:	3f 91       	pop	r19
- 2b0:	2f 91       	pop	r18
- 2b2:	0f 90       	pop	r0
- 2b4:	0b be       	out	0x3b, r0	; 59
- 2b6:	0f 90       	pop	r0
- 2b8:	0f be       	out	0x3f, r0	; 63
- 2ba:	0f 90       	pop	r0
- 2bc:	1f 90       	pop	r1
- 2be:	18 95       	reti
+ 5dc:	8f 91       	pop	r24
+ 5de:	0f 90       	pop	r0
+ 5e0:	0f be       	out	0x3f, r0	; 63
+ 5e2:	0f 90       	pop	r0
+ 5e4:	1f 90       	pop	r1
+ 5e6:	18 95       	reti
 
 Disassembly of section .text.__vector_7:
 
-000002c0 <__vector_7>:
+000005e8 <__vector_7>:
 
 ISR(INT6_vect){
- 2c0:	1f 92       	push	r1
- 2c2:	0f 92       	push	r0
- 2c4:	0f b6       	in	r0, 0x3f	; 63
- 2c6:	0f 92       	push	r0
- 2c8:	11 24       	eor	r1, r1
- 2ca:	0b b6       	in	r0, 0x3b	; 59
- 2cc:	0f 92       	push	r0
- 2ce:	2f 93       	push	r18
- 2d0:	3f 93       	push	r19
- 2d2:	4f 93       	push	r20
- 2d4:	5f 93       	push	r21
- 2d6:	6f 93       	push	r22
- 2d8:	7f 93       	push	r23
- 2da:	8f 93       	push	r24
- 2dc:	9f 93       	push	r25
- 2de:	af 93       	push	r26
- 2e0:	bf 93       	push	r27
- 2e2:	ef 93       	push	r30
- 2e4:	ff 93       	push	r31
+ 5e8:	1f 92       	push	r1
+ 5ea:	0f 92       	push	r0
+ 5ec:	0f b6       	in	r0, 0x3f	; 63
+ 5ee:	0f 92       	push	r0
+ 5f0:	11 24       	eor	r1, r1
+ 5f2:	8f 93       	push	r24
 	current_direction = o;
-		sendCommand(4, 0x80);
- 2e6:	60 e8       	ldi	r22, 0x80	; 128
- 2e8:	70 e0       	ldi	r23, 0x00	; 0
- 2ea:	84 e0       	ldi	r24, 0x04	; 4
- 2ec:	90 e0       	ldi	r25, 0x00	; 0
- 2ee:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 5f4:	81 e0       	ldi	r24, 0x01	; 1
+ 5f6:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <current_direction>
+	//sendCommand(4, 0x80);
 }
- 2f2:	ff 91       	pop	r31
- 2f4:	ef 91       	pop	r30
- 2f6:	bf 91       	pop	r27
- 2f8:	af 91       	pop	r26
- 2fa:	9f 91       	pop	r25
- 2fc:	8f 91       	pop	r24
- 2fe:	7f 91       	pop	r23
- 300:	6f 91       	pop	r22
- 302:	5f 91       	pop	r21
- 304:	4f 91       	pop	r20
- 306:	3f 91       	pop	r19
- 308:	2f 91       	pop	r18
- 30a:	0f 90       	pop	r0
- 30c:	0b be       	out	0x3b, r0	; 59
- 30e:	0f 90       	pop	r0
- 310:	0f be       	out	0x3f, r0	; 63
- 312:	0f 90       	pop	r0
- 314:	1f 90       	pop	r1
- 316:	18 95       	reti
+ 5fa:	8f 91       	pop	r24
+ 5fc:	0f 90       	pop	r0
+ 5fe:	0f be       	out	0x3f, r0	; 63
+ 600:	0f 90       	pop	r0
+ 602:	1f 90       	pop	r1
+ 604:	18 95       	reti
 
 Disassembly of section .text.__vector_8:
 
-00000318 <__vector_8>:
+00000606 <__vector_8>:
 
 ISR(INT7_vect){
- 318:	1f 92       	push	r1
- 31a:	0f 92       	push	r0
- 31c:	0f b6       	in	r0, 0x3f	; 63
- 31e:	0f 92       	push	r0
- 320:	11 24       	eor	r1, r1
- 322:	0b b6       	in	r0, 0x3b	; 59
- 324:	0f 92       	push	r0
- 326:	2f 93       	push	r18
- 328:	3f 93       	push	r19
- 32a:	4f 93       	push	r20
- 32c:	5f 93       	push	r21
- 32e:	6f 93       	push	r22
- 330:	7f 93       	push	r23
- 332:	8f 93       	push	r24
- 334:	9f 93       	push	r25
- 336:	af 93       	push	r26
- 338:	bf 93       	push	r27
- 33a:	ef 93       	push	r30
- 33c:	ff 93       	push	r31
+ 606:	1f 92       	push	r1
+ 608:	0f 92       	push	r0
+ 60a:	0f b6       	in	r0, 0x3f	; 63
+ 60c:	0f 92       	push	r0
+ 60e:	11 24       	eor	r1, r1
 	current_direction = n;
-	sendCommand(2, 0x80);
- 33e:	60 e8       	ldi	r22, 0x80	; 128
- 340:	70 e0       	ldi	r23, 0x00	; 0
- 342:	82 e0       	ldi	r24, 0x02	; 2
- 344:	90 e0       	ldi	r25, 0x00	; 0
- 346:	0e 94 16 02 	call	0x42c	; 0x42c <sendCommand>
+ 610:	10 92 30 01 	sts	0x0130, r1	; 0x800130 <current_direction>
+	//sendCommand(2, 0x80);
 }
- 34a:	ff 91       	pop	r31
- 34c:	ef 91       	pop	r30
- 34e:	bf 91       	pop	r27
- 350:	af 91       	pop	r26
- 352:	9f 91       	pop	r25
- 354:	8f 91       	pop	r24
- 356:	7f 91       	pop	r23
- 358:	6f 91       	pop	r22
- 35a:	5f 91       	pop	r21
- 35c:	4f 91       	pop	r20
- 35e:	3f 91       	pop	r19
- 360:	2f 91       	pop	r18
- 362:	0f 90       	pop	r0
- 364:	0b be       	out	0x3b, r0	; 59
- 366:	0f 90       	pop	r0
- 368:	0f be       	out	0x3f, r0	; 63
- 36a:	0f 90       	pop	r0
- 36c:	1f 90       	pop	r1
- 36e:	18 95       	reti
+ 614:	0f 90       	pop	r0
+ 616:	0f be       	out	0x3f, r0	; 63
+ 618:	0f 90       	pop	r0
+ 61a:	1f 90       	pop	r1
+ 61c:	18 95       	reti
 
 Disassembly of section .text.main:
 
-000003fa <main>:
+000003f8 <main>:
 
 int main( void ){
 	EICRB = 0b11111111; 
- 3fa:	8f ef       	ldi	r24, 0xFF	; 255
- 3fc:	8a bf       	out	0x3a, r24	; 58
+ 3f8:	8f ef       	ldi	r24, 0xFF	; 255
+ 3fa:	8a bf       	out	0x3a, r24	; 58
+	OCR2 = 255;
+ 3fc:	83 bd       	out	0x23, r24	; 35
 	EIMSK = 0b11110000; 
  3fe:	80 ef       	ldi	r24, 0xF0	; 240
  400:	89 bf       	out	0x39, r24	; 57
+	TIMSK = 0b10000000;
+ 402:	80 e8       	ldi	r24, 0x80	; 128
+ 404:	87 bf       	out	0x37, r24	; 55
 	
 	sei();
- 402:	78 94       	sei
+ 406:	78 94       	sei
+
+	TCCR2 = 0b00011101;
+ 408:	8d e1       	ldi	r24, 0x1D	; 29
+ 40a:	85 bd       	out	0x25, r24	; 37
+
 	DDRE = 0b00000000;
- 404:	12 b8       	out	0x02, r1	; 2
+ 40c:	12 b8       	out	0x02, r1	; 2
 	
 	twi_init();		// Init TWI interface
- 406:	0e 94 57 02 	call	0x4ae	; 0x4ae <twi_init>
+ 40e:	0e 94 2d 03 	call	0x65a	; 0x65a <twi_init>
 	startTWI();
- 40a:	0e 94 b8 01 	call	0x370	; 0x370 <startTWI>
+ 412:	0e 94 d3 01 	call	0x3a6	; 0x3a6 <startTWI>
 	
 	initSnake();
- 40e:	0e 94 e1 01 	call	0x3c2	; 0x3c2 <initSnake>
+ 416:	0e 94 1a 02 	call	0x434	; 0x434 <initSnake>
 	clearMatrixBoard();		
- 412:	0e 94 d7 00 	call	0x1ae	; 0x1ae <clearMatrixBoard>
+ 41a:	0e 94 a2 01 	call	0x344	; 0x344 <clearMatrixBoard>
 	
 	wait(500);
- 416:	84 ef       	ldi	r24, 0xF4	; 244
- 418:	91 e0       	ldi	r25, 0x01	; 1
- 41a:	0e 94 2a 02 	call	0x454	; 0x454 <wait>
+ 41e:	84 ef       	ldi	r24, 0xF4	; 244
+ 420:	91 e0       	ldi	r25, 0x01	; 1
+ 422:	0e 94 c7 02 	call	0x58e	; 0x58e <wait>
 
 	while(1){
-		
-		
 		display_snake();
- 41e:	0e 94 78 00 	call	0xf0	; 0xf0 <__data_load_end>
-		wait(10);
- 422:	8a e0       	ldi	r24, 0x0A	; 10
- 424:	90 e0       	ldi	r25, 0x00	; 0
- 426:	0e 94 2a 02 	call	0x454	; 0x454 <wait>
- 42a:	f9 cf       	rjmp	.-14     	; 0x41e <__LOCK_REGION_LENGTH__+0x1e>
+ 426:	0e 94 ef 00 	call	0x1de	; 0x1de <display_snake>
+		wait(500);
+ 42a:	84 ef       	ldi	r24, 0xF4	; 244
+ 42c:	91 e0       	ldi	r25, 0x01	; 1
+ 42e:	0e 94 c7 02 	call	0x58e	; 0x58e <wait>
+ 432:	f9 cf       	rjmp	.-14     	; 0x426 <__LOCK_REGION_LENGTH__+0x26>
+
+Disassembly of section .text.advanceSnake:
+
+000002a0 <advanceSnake>:
+	initSnake();
+}
+
+
+static void advanceSnake(type movementType)
+{
+ 2a0:	0f 93       	push	r16
+ 2a2:	1f 93       	push	r17
+	if(length == 10) movementType = MOVE;	
+ 2a4:	60 91 2e 01 	lds	r22, 0x012E	; 0x80012e <length>
+ 2a8:	70 91 2f 01 	lds	r23, 0x012F	; 0x80012f <length+0x1>
+ 2ac:	6a 30       	cpi	r22, 0x0A	; 10
+ 2ae:	71 05       	cpc	r23, r1
+ 2b0:	09 f4       	brne	.+2      	; 0x2b4 <advanceSnake+0x14>
+ 2b2:	80 e0       	ldi	r24, 0x00	; 0
+	
+    for(int i = 1; i < MAX; i++)
+ 2b4:	41 e0       	ldi	r20, 0x01	; 1
+ 2b6:	50 e0       	ldi	r21, 0x00	; 0
+ 2b8:	24 c0       	rjmp	.+72     	; 0x302 <advanceSnake+0x62>
+    {
+		if(MAX - i <= length + 1 ){
+ 2ba:	2a e0       	ldi	r18, 0x0A	; 10
+ 2bc:	30 e0       	ldi	r19, 0x00	; 0
+ 2be:	24 1b       	sub	r18, r20
+ 2c0:	35 0b       	sbc	r19, r21
+ 2c2:	fb 01       	movw	r30, r22
+ 2c4:	31 96       	adiw	r30, 0x01	; 1
+ 2c6:	e2 17       	cp	r30, r18
+ 2c8:	f3 07       	cpc	r31, r19
+ 2ca:	cc f0       	brlt	.+50     	; 0x2fe <advanceSnake+0x5e>
+			snake[MAX - i] = snake[MAX - i - 1];
+ 2cc:	a9 e0       	ldi	r26, 0x09	; 9
+ 2ce:	b0 e0       	ldi	r27, 0x00	; 0
+ 2d0:	a4 1b       	sub	r26, r20
+ 2d2:	b5 0b       	sbc	r27, r21
+ 2d4:	22 0f       	add	r18, r18
+ 2d6:	33 1f       	adc	r19, r19
+ 2d8:	22 0f       	add	r18, r18
+ 2da:	33 1f       	adc	r19, r19
+ 2dc:	f9 01       	movw	r30, r18
+ 2de:	e0 50       	subi	r30, 0x00	; 0
+ 2e0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2e2:	aa 0f       	add	r26, r26
+ 2e4:	bb 1f       	adc	r27, r27
+ 2e6:	aa 0f       	add	r26, r26
+ 2e8:	bb 1f       	adc	r27, r27
+ 2ea:	a0 50       	subi	r26, 0x00	; 0
+ 2ec:	bf 4f       	sbci	r27, 0xFF	; 255
+ 2ee:	0d 91       	ld	r16, X+
+ 2f0:	1d 91       	ld	r17, X+
+ 2f2:	2d 91       	ld	r18, X+
+ 2f4:	3c 91       	ld	r19, X
+ 2f6:	00 83       	st	Z, r16
+ 2f8:	11 83       	std	Z+1, r17	; 0x01
+ 2fa:	22 83       	std	Z+2, r18	; 0x02
+ 2fc:	33 83       	std	Z+3, r19	; 0x03
+
+static void advanceSnake(type movementType)
+{
+	if(length == 10) movementType = MOVE;	
+	
+    for(int i = 1; i < MAX; i++)
+ 2fe:	4f 5f       	subi	r20, 0xFF	; 255
+ 300:	5f 4f       	sbci	r21, 0xFF	; 255
+ 302:	4a 30       	cpi	r20, 0x0A	; 10
+ 304:	51 05       	cpc	r21, r1
+ 306:	cc f2       	brlt	.-78     	; 0x2ba <advanceSnake+0x1a>
+		if(MAX - i <= length + 1 ){
+			snake[MAX - i] = snake[MAX - i - 1];
+		}
+    }
+	
+    if (movementType == MOVE)
+ 308:	81 11       	cpse	r24, r1
+ 30a:	10 c0       	rjmp	.+32     	; 0x32c <advanceSnake+0x8c>
+    {
+        segment seg = {.pos = {NULL, NULL}};
+        if (length < MAX) snake[length+1] = seg;
+ 30c:	6a 30       	cpi	r22, 0x0A	; 10
+ 30e:	71 05       	cpc	r23, r1
+ 310:	b4 f4       	brge	.+44     	; 0x33e <advanceSnake+0x9e>
+ 312:	fb 01       	movw	r30, r22
+ 314:	31 96       	adiw	r30, 0x01	; 1
+ 316:	ee 0f       	add	r30, r30
+ 318:	ff 1f       	adc	r31, r31
+ 31a:	ee 0f       	add	r30, r30
+ 31c:	ff 1f       	adc	r31, r31
+ 31e:	e0 50       	subi	r30, 0x00	; 0
+ 320:	ff 4f       	sbci	r31, 0xFF	; 255
+ 322:	10 82       	st	Z, r1
+ 324:	11 82       	std	Z+1, r1	; 0x01
+ 326:	12 82       	std	Z+2, r1	; 0x02
+ 328:	13 82       	std	Z+3, r1	; 0x03
+ 32a:	09 c0       	rjmp	.+18     	; 0x33e <advanceSnake+0x9e>
+    } else
+    {
+        if (length < MAX) length++;
+ 32c:	6a 30       	cpi	r22, 0x0A	; 10
+ 32e:	71 05       	cpc	r23, r1
+ 330:	34 f4       	brge	.+12     	; 0x33e <advanceSnake+0x9e>
+ 332:	6f 5f       	subi	r22, 0xFF	; 255
+ 334:	7f 4f       	sbci	r23, 0xFF	; 255
+ 336:	70 93 2f 01 	sts	0x012F, r23	; 0x80012f <length+0x1>
+ 33a:	60 93 2e 01 	sts	0x012E, r22	; 0x80012e <length>
+    }
+}
+ 33e:	1f 91       	pop	r17
+ 340:	0f 91       	pop	r16
+ 342:	08 95       	ret
 
 Disassembly of section .text.initSnake:
 
-000003c2 <initSnake>:
+00000434 <initSnake>:
 static segment snake[MAX] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
 static int length = 3;
 
 void initSnake()
 {
     for(int i = 0; i < length; i++)
- 3c2:	80 e0       	ldi	r24, 0x00	; 0
- 3c4:	90 e0       	ldi	r25, 0x00	; 0
- 3c6:	11 c0       	rjmp	.+34     	; 0x3ea <initSnake+0x28>
+ 434:	80 e0       	ldi	r24, 0x00	; 0
+ 436:	90 e0       	ldi	r25, 0x00	; 0
+ 438:	11 c0       	rjmp	.+34     	; 0x45c <initSnake+0x28>
     {
-        segment seg = {.pos = {3 + i, 3}};
- 3c8:	ac 01       	movw	r20, r24
- 3ca:	4d 5f       	subi	r20, 0xFD	; 253
- 3cc:	5f 4f       	sbci	r21, 0xFF	; 255
- 3ce:	63 e0       	ldi	r22, 0x03	; 3
- 3d0:	70 e0       	ldi	r23, 0x00	; 0
+        segment seg = {.pos = {3 + i, 6}};
+ 43a:	ac 01       	movw	r20, r24
+ 43c:	4d 5f       	subi	r20, 0xFD	; 253
+ 43e:	5f 4f       	sbci	r21, 0xFF	; 255
+ 440:	66 e0       	ldi	r22, 0x06	; 6
+ 442:	70 e0       	ldi	r23, 0x00	; 0
         snake[i] = seg;
- 3d2:	fc 01       	movw	r30, r24
- 3d4:	ee 0f       	add	r30, r30
- 3d6:	ff 1f       	adc	r31, r31
- 3d8:	ee 0f       	add	r30, r30
- 3da:	ff 1f       	adc	r31, r31
- 3dc:	e0 50       	subi	r30, 0x00	; 0
- 3de:	ff 4f       	sbci	r31, 0xFF	; 255
- 3e0:	40 83       	st	Z, r20
- 3e2:	51 83       	std	Z+1, r21	; 0x01
- 3e4:	62 83       	std	Z+2, r22	; 0x02
- 3e6:	73 83       	std	Z+3, r23	; 0x03
+ 444:	fc 01       	movw	r30, r24
+ 446:	ee 0f       	add	r30, r30
+ 448:	ff 1f       	adc	r31, r31
+ 44a:	ee 0f       	add	r30, r30
+ 44c:	ff 1f       	adc	r31, r31
+ 44e:	e0 50       	subi	r30, 0x00	; 0
+ 450:	ff 4f       	sbci	r31, 0xFF	; 255
+ 452:	40 83       	st	Z, r20
+ 454:	51 83       	std	Z+1, r21	; 0x01
+ 456:	62 83       	std	Z+2, r22	; 0x02
+ 458:	73 83       	std	Z+3, r23	; 0x03
 static segment snake[MAX] = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL};
 static int length = 3;
 
 void initSnake()
 {
     for(int i = 0; i < length; i++)
- 3e8:	01 96       	adiw	r24, 0x01	; 1
- 3ea:	20 91 28 01 	lds	r18, 0x0128	; 0x800128 <length>
- 3ee:	30 91 29 01 	lds	r19, 0x0129	; 0x800129 <length+0x1>
- 3f2:	82 17       	cp	r24, r18
- 3f4:	93 07       	cpc	r25, r19
- 3f6:	44 f3       	brlt	.-48     	; 0x3c8 <initSnake+0x6>
+ 45a:	01 96       	adiw	r24, 0x01	; 1
+ 45c:	20 91 2e 01 	lds	r18, 0x012E	; 0x80012e <length>
+ 460:	30 91 2f 01 	lds	r19, 0x012F	; 0x80012f <length+0x1>
+ 464:	82 17       	cp	r24, r18
+ 466:	93 07       	cpc	r25, r19
+ 468:	44 f3       	brlt	.-48     	; 0x43a <initSnake+0x6>
     {
-        segment seg = {.pos = {3 + i, 3}};
+        segment seg = {.pos = {3 + i, 6}};
         snake[i] = seg;
     }
 }
- 3f8:	08 95       	ret
+ 46a:	08 95       	ret
 
 Disassembly of section .text.getSnake:
 
-00000472 <getSnake>:
+0000061e <getSnake>:
 
 segment getSnake(int index){
 	return snake[index];
- 472:	88 0f       	add	r24, r24
- 474:	99 1f       	adc	r25, r25
- 476:	88 0f       	add	r24, r24
- 478:	99 1f       	adc	r25, r25
- 47a:	fc 01       	movw	r30, r24
- 47c:	e0 50       	subi	r30, 0x00	; 0
- 47e:	ff 4f       	sbci	r31, 0xFF	; 255
- 480:	60 81       	ld	r22, Z
- 482:	71 81       	ldd	r23, Z+1	; 0x01
- 484:	82 81       	ldd	r24, Z+2	; 0x02
- 486:	93 81       	ldd	r25, Z+3	; 0x03
+ 61e:	88 0f       	add	r24, r24
+ 620:	99 1f       	adc	r25, r25
+ 622:	88 0f       	add	r24, r24
+ 624:	99 1f       	adc	r25, r25
+ 626:	fc 01       	movw	r30, r24
+ 628:	e0 50       	subi	r30, 0x00	; 0
+ 62a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 62c:	60 81       	ld	r22, Z
+ 62e:	71 81       	ldd	r23, Z+1	; 0x01
+ 630:	82 81       	ldd	r24, Z+2	; 0x02
+ 632:	93 81       	ldd	r25, Z+3	; 0x03
 }
- 488:	08 95       	ret
+ 634:	08 95       	ret
+
+Disassembly of section .text.getSnakeLength:
+
+0000067a <getSnakeLength>:
+
+int getSnakeLength(){
+	return length;
+}
+ 67a:	80 91 2e 01 	lds	r24, 0x012E	; 0x80012e <length>
+ 67e:	90 91 2f 01 	lds	r25, 0x012F	; 0x80012f <length+0x1>
+ 682:	08 95       	ret
+
+Disassembly of section .text.clearSnake:
+
+0000046c <clearSnake>:
+        snake[0].pos[X]++;
+    }
+}
+
+void clearSnake(){
+	for(int i = 0; i < 10; i++){
+ 46c:	80 e0       	ldi	r24, 0x00	; 0
+ 46e:	90 e0       	ldi	r25, 0x00	; 0
+ 470:	10 c0       	rjmp	.+32     	; 0x492 <clearSnake+0x26>
+		segment seg = {.pos = {NULL, NULL}};				
+ 472:	40 e0       	ldi	r20, 0x00	; 0
+ 474:	50 e0       	ldi	r21, 0x00	; 0
+ 476:	60 e0       	ldi	r22, 0x00	; 0
+ 478:	70 e0       	ldi	r23, 0x00	; 0
+			
+		snake[i] = seg;
+ 47a:	fc 01       	movw	r30, r24
+ 47c:	ee 0f       	add	r30, r30
+ 47e:	ff 1f       	adc	r31, r31
+ 480:	ee 0f       	add	r30, r30
+ 482:	ff 1f       	adc	r31, r31
+ 484:	e0 50       	subi	r30, 0x00	; 0
+ 486:	ff 4f       	sbci	r31, 0xFF	; 255
+ 488:	40 83       	st	Z, r20
+ 48a:	51 83       	std	Z+1, r21	; 0x01
+ 48c:	62 83       	std	Z+2, r22	; 0x02
+ 48e:	73 83       	std	Z+3, r23	; 0x03
+        snake[0].pos[X]++;
+    }
+}
+
+void clearSnake(){
+	for(int i = 0; i < 10; i++){
+ 490:	01 96       	adiw	r24, 0x01	; 1
+ 492:	8a 30       	cpi	r24, 0x0A	; 10
+ 494:	91 05       	cpc	r25, r1
+ 496:	6c f3       	brlt	.-38     	; 0x472 <clearSnake+0x6>
+		segment seg = {.pos = {NULL, NULL}};				
+			
+		snake[i] = seg;
+	}
+}
+ 498:	08 95       	ret
+
+Disassembly of section .text.gameOver:
+
+0000049a <gameOver>:
+
+void gameOver()
+{
+	length = 3;
+ 49a:	83 e0       	ldi	r24, 0x03	; 3
+ 49c:	90 e0       	ldi	r25, 0x00	; 0
+ 49e:	90 93 2f 01 	sts	0x012F, r25	; 0x80012f <length+0x1>
+ 4a2:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <length>
+	clearSnake();
+ 4a6:	0e 94 36 02 	call	0x46c	; 0x46c <clearSnake>
+	setSnakeLenghtInc(0);
+ 4aa:	80 e0       	ldi	r24, 0x00	; 0
+ 4ac:	90 e0       	ldi	r25, 0x00	; 0
+ 4ae:	0e 94 38 03 	call	0x670	; 0x670 <setSnakeLenghtInc>
+	setDirection(n);
+ 4b2:	80 e0       	ldi	r24, 0x00	; 0
+ 4b4:	0e 94 46 03 	call	0x68c	; 0x68c <setDirection>
+	setSnakeSpeed(25);
+ 4b8:	89 e1       	ldi	r24, 0x19	; 25
+ 4ba:	90 e0       	ldi	r25, 0x00	; 0
+ 4bc:	0e 94 33 03 	call	0x666	; 0x666 <setSnakeSpeed>
+	initSnake();
+ 4c0:	0e 94 1a 02 	call	0x434	; 0x434 <initSnake>
+ 4c4:	08 95       	ret
+
+Disassembly of section .text.moveUp:
+
+000004ee <moveUp>:
+int getSnakeLength(){
+	return length;
+}
+void moveUp(type movementType)
+{
+    if (snake[0].pos[Y] == 1)
+ 4ee:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__DATA_REGION_ORIGIN__+0x2>
+ 4f2:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__DATA_REGION_ORIGIN__+0x3>
+ 4f6:	21 30       	cpi	r18, 0x01	; 1
+ 4f8:	31 05       	cpc	r19, r1
+ 4fa:	19 f4       	brne	.+6      	; 0x502 <moveUp+0x14>
+    {
+        gameOver();
+ 4fc:	0e 94 4d 02 	call	0x49a	; 0x49a <gameOver>
+ 500:	08 95       	ret
+    } else
+    {
+		
+        advanceSnake(movementType);
+ 502:	0e 94 50 01 	call	0x2a0	; 0x2a0 <advanceSnake>
+        snake[0].pos[Y]--;
+ 506:	e0 e0       	ldi	r30, 0x00	; 0
+ 508:	f1 e0       	ldi	r31, 0x01	; 1
+ 50a:	82 81       	ldd	r24, Z+2	; 0x02
+ 50c:	93 81       	ldd	r25, Z+3	; 0x03
+ 50e:	01 97       	sbiw	r24, 0x01	; 1
+ 510:	93 83       	std	Z+3, r25	; 0x03
+ 512:	82 83       	std	Z+2, r24	; 0x02
+ 514:	08 95       	ret
+
+Disassembly of section .text.moveDown:
+
+00000516 <moveDown>:
+    }
+}
+
+void moveDown(type movementType)
+{
+    if (snake[0].pos[Y] == 8)
+ 516:	20 91 02 01 	lds	r18, 0x0102	; 0x800102 <__DATA_REGION_ORIGIN__+0x2>
+ 51a:	30 91 03 01 	lds	r19, 0x0103	; 0x800103 <__DATA_REGION_ORIGIN__+0x3>
+ 51e:	28 30       	cpi	r18, 0x08	; 8
+ 520:	31 05       	cpc	r19, r1
+ 522:	19 f4       	brne	.+6      	; 0x52a <moveDown+0x14>
+    {
+        gameOver();
+ 524:	0e 94 4d 02 	call	0x49a	; 0x49a <gameOver>
+ 528:	08 95       	ret
+    } else
+    {
+        advanceSnake(movementType);
+ 52a:	0e 94 50 01 	call	0x2a0	; 0x2a0 <advanceSnake>
+        snake[0].pos[Y]++;
+ 52e:	e0 e0       	ldi	r30, 0x00	; 0
+ 530:	f1 e0       	ldi	r31, 0x01	; 1
+ 532:	82 81       	ldd	r24, Z+2	; 0x02
+ 534:	93 81       	ldd	r25, Z+3	; 0x03
+ 536:	01 96       	adiw	r24, 0x01	; 1
+ 538:	93 83       	std	Z+3, r25	; 0x03
+ 53a:	82 83       	std	Z+2, r24	; 0x02
+ 53c:	08 95       	ret
+
+Disassembly of section .text.moveLeft:
+
+0000053e <moveLeft>:
+    }
+}
+
+void moveLeft(type movementType)
+{
+    if (snake[0].pos[X] == 1)
+ 53e:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 542:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 546:	21 30       	cpi	r18, 0x01	; 1
+ 548:	31 05       	cpc	r19, r1
+ 54a:	19 f4       	brne	.+6      	; 0x552 <moveLeft+0x14>
+    {
+        gameOver();
+ 54c:	0e 94 4d 02 	call	0x49a	; 0x49a <gameOver>
+ 550:	08 95       	ret
+    } else
+    {
+        advanceSnake(movementType);
+ 552:	0e 94 50 01 	call	0x2a0	; 0x2a0 <advanceSnake>
+        snake[0].pos[X]--;
+ 556:	e0 e0       	ldi	r30, 0x00	; 0
+ 558:	f1 e0       	ldi	r31, 0x01	; 1
+ 55a:	80 81       	ld	r24, Z
+ 55c:	91 81       	ldd	r25, Z+1	; 0x01
+ 55e:	01 97       	sbiw	r24, 0x01	; 1
+ 560:	91 83       	std	Z+1, r25	; 0x01
+ 562:	80 83       	st	Z, r24
+ 564:	08 95       	ret
+
+Disassembly of section .text.moveRight:
+
+00000566 <moveRight>:
+    }
+}
+
+void moveRight(type movementType)
+{
+    if (snake[0].pos[X] == 8)
+ 566:	20 91 00 01 	lds	r18, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
+ 56a:	30 91 01 01 	lds	r19, 0x0101	; 0x800101 <__DATA_REGION_ORIGIN__+0x1>
+ 56e:	28 30       	cpi	r18, 0x08	; 8
+ 570:	31 05       	cpc	r19, r1
+ 572:	19 f4       	brne	.+6      	; 0x57a <moveRight+0x14>
+    {
+        gameOver();
+ 574:	0e 94 4d 02 	call	0x49a	; 0x49a <gameOver>
+ 578:	08 95       	ret
+    } else
+    {
+        advanceSnake(movementType);
+ 57a:	0e 94 50 01 	call	0x2a0	; 0x2a0 <advanceSnake>
+        snake[0].pos[X]++;
+ 57e:	e0 e0       	ldi	r30, 0x00	; 0
+ 580:	f1 e0       	ldi	r31, 0x01	; 1
+ 582:	80 81       	ld	r24, Z
+ 584:	91 81       	ldd	r25, Z+1	; 0x01
+ 586:	01 96       	adiw	r24, 0x01	; 1
+ 588:	91 83       	std	Z+1, r25	; 0x01
+ 58a:	80 83       	st	Z, r24
+ 58c:	08 95       	ret

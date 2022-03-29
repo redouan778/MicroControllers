@@ -18,6 +18,7 @@ void moveUp(type);
 void moveDown(type);
 void moveLeft(type);
 void moveRight(type);
+int getSnakeLength();
 
 void gameOver(void);
 segment getSnake(int index);

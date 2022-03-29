@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "snakeLogic.h"
+#include "setValues.h"
 
 
 
@@ -15,13 +16,17 @@ void initSnake()
 {
     for(int i = 0; i < length; i++)
     {
-        segment seg = {.pos = {3 + i, 3}};
+        segment seg = {.pos = {3 + i, 6}};
         snake[i] = seg;
     }
 }
 
 segment getSnake(int index){
 	return snake[index];
+}
+
+int getSnakeLength(){
+	return length;
 }
 void moveUp(type movementType)
 {
@@ -30,6 +35,7 @@ void moveUp(type movementType)
         gameOver();
     } else
     {
+		
         advanceSnake(movementType);
         snake[0].pos[Y]--;
         checkSnake();
@@ -75,21 +81,40 @@ void moveRight(type movementType)
     }
 }
 
+void clearSnake(){
+	for(int i = 0; i < 10; i++){
+		segment seg = {.pos = {NULL, NULL}};				
+			
+		snake[i] = seg;
+	}
+}
+
 void gameOver()
 {
-    //ToDo game over.
+	length = 3;
+	clearSnake();
+	setSnakeLenghtInc(0);
+	setDirection(n);
+	setSnakeSpeed(25);
+	initSnake();
 }
+
 
 static void advanceSnake(type movementType)
 {
-    for(int i = 1; i < MAX - 1; i++)
+	if(length == 10) movementType = MOVE;	
+	
+    for(int i = 1; i < MAX; i++)
     {
-        snake[MAX - i] = snake[MAX - i - 1];
+		if(MAX - i <= length + 1 ){
+			snake[MAX - i] = snake[MAX - i - 1];
+		}
     }
+	
     if (movementType == MOVE)
     {
         segment seg = {.pos = {NULL, NULL}};
-        if (length < MAX) snake[length] = seg;
+        if (length < MAX) snake[length+1] = seg;
     } else
     {
         if (length < MAX) length++;
